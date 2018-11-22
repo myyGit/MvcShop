@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    @RenderPage("~/Views/CommonPage/headCommon.cshtml")
+    <title>@ViewBag.Title - happymmall电商平台</title>
+    <link href="~/page/common/footer/index.css" rel="stylesheet" />
+    <link href="~/page/common/layout.css" rel="stylesheet" />
+    <script src="~/js/jquery.min.js"></script>
+</head>
+<body>
+    @*顶部*@
+    @RenderPage("~/Views/CommonPage/navSimple.cshtml")
+    @RenderBody()
+    @*尾部*@
+    @RenderPage("~/Views/CommonPage/footer.cshtml")
+</body>
+</html>
