@@ -1,0 +1,12 @@
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\MvcShop.Entity.dll.config
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\MvcShop.Entity.dll
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\MvcShop.Entity.pdb
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\EntityFramework.dll
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\EntityFramework.SqlServer.dll
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\EntityFramework.xml
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\EntityFramework.SqlServer.xml
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.csproj.CoreCompileInputs.cache
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.csproj.CopyComplete
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.dll
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.pdb
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.csprojAssemblyReference.cache

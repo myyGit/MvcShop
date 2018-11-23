@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "商品列表";
+    Layout = "~/Views/Shared/_LayoutOne.cshtml";
+}
+<link href="~/page/list/index.css" rel="stylesheet" />
+<link href="~/util/pagination/index.css" rel="stylesheet" />
+<div class="crumb">
+    <div class="w">
+        <div class="crumb-con">
+            <a class="link" href="./index.html">MMall</a>
+            <span>></span>
+            <span class="link-text">标题</span>
+        </div>
+    </div>
+</div>
+<div class="page-wrap w">
+    <ul class="sort-con">
+        <li class="sort-item active" data-type="default">默认排序</li>
+        <li class="sort-item" data-type="price">
+            <span>价格</span>
+            <i class="fa fa-sort-asc"></i>
+            <i class="fa fa-sort-desc"></i>
+        </li>
+    </ul>
+    <!-- list 容器 -->
+    <!--<div class="loading"></div>-->
+    <ul class="p-list-con">
+        <!--<p class="err-tip">很抱歉，实在找不到您要的商品。</p>-->
+        @for (int i = 0; i < 20; i++)
+        {
+            <li class="p-item">
+                <div class="p-img-con">
+                    <a class="link" href="@Url.Action("Detail","Goods",new { productId = i })" target="_blank">
+                        <img class="p-img" src="~/image/goods/07.JPG" alt="商品名称" />
+                    </a>
+                </div>
+                <div class="p-price-con">
+                    <span class="p-price">￥100</span>
+                </div>
+                <div class="p-name-con">
+                    <a class="p-name" href="@Url.Action("Detail","Goods",new { productId = i })" target="_blank">商品名称</a>
+                </div>
+            </li>
+        }
+    </ul>
+
+
+    <!-- 分页容器 -->
+    <div class="pagination">
+        <div class="pg-content">
+            <span class="pg-item disabled" data-value="0">上一页</span>
+            <span class="pg-item active" data-value="1">1</span>
+            <span class="pg-item" data-value="2">2</span>
+            <span class="pg-item" data-value="2">3</span>
+            <span class="pg-item" data-value="2">4</span>
+            <span class="pg-item" data-value="2">5</span>
+            <span class="pg-total">1 / 100</span>
+        </div>
+    </div>
+</div>
+
+

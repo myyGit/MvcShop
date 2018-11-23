@@ -1,0 +1,12 @@
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Release\MvcShop.Entity.dll.config
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Release\MvcShop.Entity.dll
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Release\MvcShop.Entity.pdb
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Release\EntityFramework.dll
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Release\EntityFramework.SqlServer.dll
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Release\EntityFramework.xml
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Release\EntityFramework.SqlServer.xml
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Release\MvcShop.Entity.csprojAssemblyReference.cache
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Release\MvcShop.Entity.csproj.CoreCompileInputs.cache
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Release\MvcShop.Entity.csproj.CopyComplete
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Release\MvcShop.Entity.dll
+F:\个人网站\MvcShop\MvcShop.Entity\obj\Release\MvcShop.Entity.pdb

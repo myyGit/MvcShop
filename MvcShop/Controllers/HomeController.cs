@@ -13,5 +13,9 @@ namespace MvcShop.Controllers
         {
             return View();
         }
+        public ActionResult Result()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    @RenderPage("~/Views/CommonPage/headCommon.cshtml")
+    <title>@ViewBag.Title - happymmall电商平台</title>
+    <link href="~/page/common/footer/index.css" rel="stylesheet" />
+    <link href="~/page/common/layout.css" rel="stylesheet" />
+    <script src="~/js/jquery.min.js"></script>
+</head>
+<body>
+    @*RenderPage()调用的页面只能使用其传递过去的数据。
+        而RenderPartial()是可以使用viewdata,model等数据的。*@
+
+    @*顶部*@
+    @RenderPage("~/Views/CommonPage/nav.cshtml", new { IsLogin = false, UserName = "张三", CartNum = 2 })
+    @*头部*@
+    @RenderPage("~/Views/CommonPage/header.cshtml")
+    @*主体*@
+    @RenderBody()
+
+    @*尾部*@
+    @RenderPage("~/Views/CommonPage/footer.cshtml")
+</body>
+</html>

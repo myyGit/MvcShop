@@ -43,6 +43,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -178,6 +190,8 @@
     <Content Include="page\list\index.string" />
     <Content Include="page\user-center-update\index.string" />
     <Content Include="page\user-center\index.string" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -209,6 +223,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="common\SuccessResult.cs" />
     <Compile Include="Controllers\GoodsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
@@ -216,6 +231,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -227,6 +243,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\UserAccount\Register.cshtml" />
+    <Content Include="Views\Home\Result.cshtml" />
+    <Content Include="Views\UserAccount\UserCenter.cshtml" />
+    <Content Include="Views\UserAccount\UserCenterUpdate.cshtml" />
+    <Content Include="Views\UserAccount\UserPassReset.cshtml" />
+    <Content Include="Views\UserAccount\UserPassUpdate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -236,7 +258,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcShop.Common\MvcShop.Common.csproj">
+      <Project>{aab64ced-6349-427c-b4b1-6619403b059e}</Project>
+      <Name>MvcShop.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcShop.Entity\MvcShop.Entity.csproj">
+      <Project>{f74f7aec-4d4b-49d8-a15b-98b09a3bb2d2}</Project>
+      <Name>MvcShop.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MvcShop.Service\MvcShop.Service.csproj">
+      <Project>{cabe75a8-96a0-4f8e-ae6b-6f67fe85cb3b}</Project>
+      <Name>MvcShop.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,12 @@
+﻿
+<link href="~/page/common/header/index.css" rel="stylesheet" />
+
+<form class="header" action="@Url.Action("List","Goods")" method="post">
+    <div class="w">
+        <a class="logo" href="@Url.Action("Index","Home")">MMall</a>
+        <div class="search-con">
+            <input class="search-input" name="keyWord" id="search-input" placeholder="请输入商品名称" />
+            <button class="btn search-btn" id="search-btn">搜索</button>
+        </div>
+    </div>
+</form>
