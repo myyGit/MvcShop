@@ -15,7 +15,10 @@
         而RenderPartial()是可以使用viewdata,model等数据的。*@
 
     @*顶部*@
-    @RenderPage("~/Views/CommonPage/nav.cshtml", new { IsLogin = false, UserName = "张三", CartNum = 2 })
+    @{
+        Html.RenderAction("Nav", "CommonPage");
+            }
+    @*@RenderPage("~/Views/CommonPage/nav.cshtml", new { IsLogin = ViewBag.IsLogin, UserName = ViewBag.UserName, CartNum = ViewBag.CartNum })*@
     @*头部*@
     @RenderPage("~/Views/CommonPage/header.cshtml")
     @*主体*@

@@ -3,6 +3,8 @@
     ViewBag.Title = "个人信息修改";
     Layout = "~/Views/Shared/_LayoutOne.cshtml";
 }
+@model UserAccount
+@using MvcShop.Entity;
 <link href="~/page/user-center-update/index.css" rel="stylesheet" />
 <script src="~/page/user-center-update/index.js"></script>
 
@@ -23,23 +25,23 @@
             <div class="user-info">
                 <div class="form-line">
                     <span class="label">用户名：</span>
-                    <span class="text">张三</span>
+                    <span class="text">@Model.UserName</span>
                 </div>
                 <div class="form-line">
                     <span class="label">电 话：</span>
-                    <input class="input" id="phone" autocomplete="off" value="13300000000" />
+                    <input class="input" id="phone" autocomplete="off" value="@Model.Mobile" />
                 </div>
                 <div class="form-line">
                     <span class="label">邮 箱：</span>
-                    <input class="input" id="email" autocomplete="off" value="12345678@qq.com" />
+                    <input class="input" id="email" autocomplete="off" value="@Model.UserEmail" />
                 </div>
                 <div class="form-line">
                     <span class="label">问 题：</span>
-                    <input class="input" id="question" autocomplete="off" value="我的名字" />
+                    <input class="input" id="question" autocomplete="off" value="@Model.Question" />
                 </div>
                 <div class="form-line">
                     <span class="label">答 案：</span>
-                    <input class="input" id="answer" autocomplete="off" value="你猜呐" />
+                    <input class="input" id="answer" autocomplete="off" value="@Model.Answer" />
                 </div>
                 <span class="btn btn-submit">提交</span>
             </div>

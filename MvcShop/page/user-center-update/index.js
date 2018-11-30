@@ -32,7 +32,7 @@ var page = {
                 // 更改用户信息
                 _user.updateUserInfo(userInfo, function(res, msg){
                     _mm.successTips(msg);
-                    window.location.href = './user-center.html';
+                    window.location.href = '~/UserAccount/UserCenter';
                 }, function(errMsg){
                     _mm.errorTips(errMsg);
                 });

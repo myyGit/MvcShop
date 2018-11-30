@@ -37,7 +37,7 @@ namespace MvcShop.Entity
 
             base.OnModelCreating(modelBuilder);
         }
-        public IDbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity
+        public new IDbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity
         {
             return base.Set<TEntity>();
         }

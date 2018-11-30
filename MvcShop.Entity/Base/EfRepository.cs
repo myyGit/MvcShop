@@ -28,7 +28,7 @@ namespace MvcShop.Entity
             if (entity == null)
                 throw new ArgumentNullException("entity");
 
-            this._dbEntities.Remove(entity);
+            this.Entities.Remove(entity);
 
             this._context.SaveChanges();
         }
@@ -40,7 +40,7 @@ namespace MvcShop.Entity
 
             foreach (var entity in entities)
             {
-                this._dbEntities.Remove(entity);
+                this.Entities.Remove(entity);
             }
 
             this._context.SaveChanges();
@@ -56,7 +56,7 @@ namespace MvcShop.Entity
             if (entity == null)
                 throw new ArgumentNullException("entity");
 
-            this._dbEntities.Add(entity);
+            this.Entities.Add(entity);
 
             this._context.SaveChanges();
         }
@@ -67,7 +67,7 @@ namespace MvcShop.Entity
                 throw new ArgumentNullException("entities");
             foreach (var entity in entities)
             {
-                this._dbEntities.Add(entity);
+                this.Entities.Add(entity);
             }
             this._context.SaveChanges();
 
@@ -96,7 +96,7 @@ namespace MvcShop.Entity
             if (entity == null)
                 throw new ArgumentNullException("entity");
 
-            this._dbEntities.Add(entity);
+            this.Entities.Add(entity);
 
             this._context.SaveChanges();
             return entity.Id;

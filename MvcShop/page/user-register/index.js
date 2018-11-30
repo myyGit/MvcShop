@@ -61,11 +61,15 @@ var page = {
                 answer          : $.trim($('#answer').val())
             },
             // 表单验证结果
-            validateResult = this.formValidate(formData);
+          //  validateResult = this.formValidate(formData);
+            validateResult = {
+                status: true,
+                msg: ''
+            };
         // 验证成功
         if(validateResult.status){
             _user.register(formData, function(res){
-                window.location.href = './Home/result.html?type=register';
+                window.location.href = '/Home/result?type=register';
             }, function(errMsg){
                 formError.show(errMsg);
             });

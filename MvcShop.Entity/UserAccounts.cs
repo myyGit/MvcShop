@@ -28,8 +28,8 @@ namespace MvcShop.Entity
         [StringLength(50)]
         public string UserPassword { get; set; }
 
-        [StringLength(50)]
-        public string NickName { get; set; }
+        [StringLength(200)]
+        public string UserEmail { get; set; }
 
         [StringLength(100)]
         public string Mobile { get; set; }

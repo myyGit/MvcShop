@@ -37,6 +37,10 @@ namespace MvcShop.Service
         {
             if (user != null)
             {
+                user.CreateTime = DateTime.Now;
+                user.LastChangeTime = DateTime.Now;
+                user.IsActive = true;
+                
                 _userAccount.Insert(user);
             }
         }
@@ -45,6 +49,7 @@ namespace MvcShop.Service
         {
             if (user != null)
             {
+                user.LastChangeTime = DateTime.Now;
                 _userAccount.Update(user);
             }
         }
