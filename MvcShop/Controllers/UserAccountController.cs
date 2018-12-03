@@ -15,7 +15,7 @@ namespace MvcShop.Controllers
     public class UserAccountController : Controller
     {
         private readonly IUserService _userService;
-        private string token = "";
+        private static string token = "";
         public UserAccountController(IUserService userService)
         {
             this._userService = userService;
@@ -103,13 +103,15 @@ namespace MvcShop.Controllers
         {
             CurrentUser currentUser = (CurrentUser)base.HttpContext.Session["CurrentUser"];
             UserAccount userAccount = _userService.GetUserByUserId(currentUser.UserId);
+            ViewBag.LittleTitle = "个人中心";
             return View(userAccount);
         }
-        
+        #region 个人信息修改
         public ActionResult UserCenterUpdate()
         {
             CurrentUser currentUser = (CurrentUser)base.HttpContext.Session["CurrentUser"];
             UserAccount userAccount = _userService.GetUserByUserId(currentUser.UserId);
+            ViewBag.LittleTitle = "个人中心";
             return View(userAccount);
         }
         [HttpPost]
@@ -120,10 +122,11 @@ namespace MvcShop.Controllers
             userAccount.Mobile = model.phone;
             userAccount.UserEmail = model.email;
             userAccount.Question = model.question;
-            userAccount.Answer = model.answer;
+            userAccount.Answer = model.answer.Trim();
             _userService.UpdateUser(userAccount);
             return Json(new SuccessResult { status = 1, data = "OK", msg = "OK" });
         }
+        #endregion
 
         #region 忘记密码
         [AllowAnonymous]
@@ -137,12 +140,12 @@ namespace MvcShop.Controllers
         {
             if (string.IsNullOrEmpty(username))
             {
-                return Json(new SuccessResult { status = 2, msg = "Error", data = "请输入用户名" });
+                return Json(new SuccessResult { status = 2, msg = "请输入用户名", data = "Error" });
             }
             UserAccount userAccount = _userService.GetUserByUserName(username);
             if (userAccount == null)
             {
-                return Json(new SuccessResult { status = 2, msg = "Error", data = "输入的用户名不存在" });
+                return Json(new SuccessResult { status = 2, msg = "输入的用户名不存在", data = "Error" });
             }
             return Json(new SuccessResult { status = 1, msg = "OK", data = userAccount.Question });
         }
@@ -152,16 +155,16 @@ namespace MvcShop.Controllers
         {
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(question) || string.IsNullOrEmpty(answer))
             {
-                return Json(new SuccessResult { status = 2, msg = "Error", data = "参数错误" });
+                return Json(new SuccessResult { status = 2, msg = "参数错误,请重新开始", data = "Error" });
             }
             UserAccount userAccount = _userService.GetUserByUserName(username);
             if (userAccount == null)
             {
-                return Json(new SuccessResult { status = 2, msg = "Error", data = "输入的用户名不存在" });
+                return Json(new SuccessResult { status = 2, msg = "输入的用户名不存在", data = "Error" });
             }
             if (!userAccount.Answer.Equals(answer))
             {
-                return Json(new SuccessResult { status = 2, msg = "Error", data = "请输入密保问题答案" });
+                return Json(new SuccessResult { status = 2, msg = "密保问题答案输入错误", data = "Error" });
             }
             token = GuidUtils.ToClearLow(GuidUtils.ClearLow);
             return Json(new SuccessResult { status = 1, msg = "OK", data = token });
@@ -173,12 +176,12 @@ namespace MvcShop.Controllers
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(passwordNew) 
                 || string.IsNullOrEmpty(forgetToken) || !forgetToken.Equals(token))
             {
-                return Json(new SuccessResult { status = 2, msg = "Error", data = "参数错误" });
+                return Json(new SuccessResult { status = 2, msg = "参数错误", data = "Error" });
             }
             UserAccount userAccount = _userService.GetUserByUserName(username);
             if (userAccount == null)
             {
-                return Json(new SuccessResult { status = 2, msg = "Error", data = "输入的用户名不存在" });
+                return Json(new SuccessResult { status = 2, msg = "输入的用户名不存在", data = "Error" });
             }
             userAccount.UserPassword = EncryptionHelper.MD5Encrypt64(passwordNew);
             _userService.UpdateUser(userAccount);
@@ -186,12 +189,28 @@ namespace MvcShop.Controllers
         }
         #endregion
 
-
-
+        #region 修改密码
         public ActionResult UserPassUpdate()
         {
+            ViewBag.LittleTitle = "修改密码";
             return View();
         }
+        [HttpPost]
+        public ActionResult ResetPassword(string passwordOld,string passwordNew)
+        {
+            CurrentUser currentUser = (CurrentUser)base.HttpContext.Session["CurrentUser"];
+            UserAccount userAccount = _userService.GetUserByUserId(currentUser.UserId);
+            string pwd = EncryptionHelper.MD5Encrypt64(passwordNew);
+            if (pwd.Equals(userAccount.UserPassword))
+            {
+                return Json(new SuccessResult { status = 2, data = "Error", msg = "新密码与原密码一样" });
+            }
+            userAccount.UserPassword = pwd;
+            _userService.UpdateUser(userAccount);
+            return Json(new SuccessResult { status = 1, data = "OK", msg = "OK" });
+        }
+        #endregion
+
 
         public ActionResult LogOut()
         {
@@ -217,7 +236,7 @@ namespace MvcShop.Controllers
             context.Session.RemoveAll();
             context.Session.Abandon(); //就是把当前Session对象删除了，下一次就是新的Session了
             #endregion
-            return View("~/");
+            return Redirect("/");
         }
 
         #region 进行的一些异步验证

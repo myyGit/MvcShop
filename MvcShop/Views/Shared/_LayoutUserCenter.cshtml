@@ -20,8 +20,20 @@
     @*头部*@
     @RenderPage("~/Views/CommonPage/header.cshtml")
     @*@RenderPage("~/Views/CommonPage/navSimple.cshtml")*@
-    @RenderPage("~/Views/CommonPage/navSide.cshtml")
-    @RenderBody()
+
+    <div class="crumb">
+        <div class="w">
+            <div class="crumb-con">
+                <a class="link" href="./index.html">MMall</a>
+                <span>></span>
+                <span class="link-text">@ViewBag.LittleTitle</span>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrap w">
+        @RenderPage("~/Views/CommonPage/navSide.cshtml")
+        @RenderBody()
+    </div>
     @*尾部*@
     @RenderPage("~/Views/CommonPage/footer.cshtml")
 </body>

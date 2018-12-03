@@ -1,5 +1,5 @@
 document.write("<script src='../util/mm.js'></script>");
-//document.write("<script src='../page/common/nav-side/index.js'></script>");
+document.write("<script src='../page/common/nav-side/index.js'></script>");
 document.write("<script src='../service/user-service.js'></script>");
 
 
@@ -10,9 +10,9 @@ var page = {
     },
     onLoad : function(){
         // 初始化左侧菜单
-        //navSide.init({
-        //    name: 'user-center'
-        //});
+        navSide.init({
+            name: 'user-center'
+        });
         // 加载用户信息
         this.loadUserInfo();
     },

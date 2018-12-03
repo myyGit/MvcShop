@@ -1,54 +1,40 @@
 ﻿
 @{
     ViewBag.Title = "个人中心";
-    Layout = "~/Views/Shared/_LayoutOne.cshtml";
+    Layout = "~/Views/Shared/_LayoutUserCenter.cshtml";
 }
 @model UserAccount
 @using MvcShop.Entity;
 <link href="~/page/user-center/index.css" rel="stylesheet" />
 <script src="~/page/user-center/index.js"></script>
-<div class="crumb">
-    <div class="w">
-        <div class="crumb-con">
-            <a class="link" href="./index.html">MMall</a>
-            <span>></span>
-            <span class="link-text">个人中心</span>
-        </div>
-    </div>
-</div>
-<div class="page-wrap w">
-    <div id="navSideDiv"></div>
-    <div class="content with-nav">
-        <div class="panel">
-            <div class="panel-title">个人中心</div>
-            <div class="user-info">
-                <div class="form-line">
-                    <span class="label">用户名：</span>
-                    <span class="text">@Model.UserName</span>
-                </div>
-                <div class="form-line">
-                    <span class="label">电 话：</span>
-                    <span class="text">@Model.Mobile</span>
-                </div>
-                <div class="form-line">
-                    <span class="label">邮 箱：</span>
-                    <span class="text">@Model.UserEmail</span>
-                </div>
-                <div class="form-line">
-                    <span class="label">问 题：</span>
-                    <span class="text">@Model.Question</span>
-                </div>
-                <div class="form-line">
-                    <span class="label">答 案：</span>
-                    <span class="text">@Model.Answer</span>
-                </div>
-                <a class="btn btn-submit" href="@Url.Action("UserCenterUpdate","UserAccount")">编辑</a>
+<div class="content with-nav">
+    <div class="panel">
+        <div class="panel-title">个人中心</div>
+        <div class="user-info">
+            <div class="form-line">
+                <span class="label">用户名：</span>
+                <span class="text">@Model.UserName</span>
             </div>
-            <!--<div class="panel-body">
-                <div class="loading"></div>
-            </div>-->
+            <div class="form-line">
+                <span class="label">电 话：</span>
+                <span class="text">@Model.Mobile</span>
+            </div>
+            <div class="form-line">
+                <span class="label">邮 箱：</span>
+                <span class="text">@Model.UserEmail</span>
+            </div>
+            <div class="form-line">
+                <span class="label">问 题：</span>
+                <span class="text">@Model.Question</span>
+            </div>
+            <div class="form-line">
+                <span class="label">答 案：</span>
+                <span class="text">@Model.Answer</span>
+            </div>
+            <a class="btn btn-submit" href="@Url.Action("UserCenterUpdate","UserAccount")">编辑</a>
         </div>
+        <!--<div class="panel-body">
+            <div class="loading"></div>
+        </div>-->
     </div>
 </div>
-
-

@@ -68,7 +68,7 @@ var _user = {
     // 重置密码
     resetPassword : function(userInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/forget_reset_password.do'),
+            url: _mm.getServerUrl('ForgetResetPpassword'),
             data    : userInfo,
             method  : 'POST',
             success : resolve,
@@ -97,7 +97,7 @@ var _user = {
     // 登录状态下更新密码
     updatePassword : function(userInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/user/reset_password.do'),
+            url: _mm.getServerUrl('ResetPassword'),
             data    : userInfo,
             method  : 'POST',
             success : resolve,
