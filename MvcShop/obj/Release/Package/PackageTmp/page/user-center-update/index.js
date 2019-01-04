@@ -1,6 +1,6 @@
 
 document.write("<script src='../util/mm.js'></script>");
-//document.write("<script src='../page/common/nav-side/index.js'></script>");
+document.write("<script src='../page/common/nav-side/index.js'></script>");
 document.write("<script src='../service/user-service.js'></script>");
 
 // page 逻辑部分
@@ -11,9 +11,9 @@ var page = {
     },
     onLoad : function(){
         // 初始化左侧菜单
-        //navSide.init({
-        //    name: 'user-center'
-        //});
+        navSide.init({
+            name: 'user-center'
+        });
         // 加载用户信息
         this.loadUserInfo();
     },
@@ -27,12 +27,13 @@ var page = {
                 question    : $.trim($('#question').val()),
                 answer      : $.trim($('#answer').val())
             },
-            validateResult = _this.validateForm(userInfo);
+                validateResult = _this.validateForm(userInfo);
+            console.log(userInfo);
             if(validateResult.status){
                 // 更改用户信息
                 _user.updateUserInfo(userInfo, function(res, msg){
                     _mm.successTips(msg);
-                    window.location.href = './user-center.html';
+                    window.location.href = '/UserAccount/UserCenter';
                 }, function(errMsg){
                     _mm.errorTips(errMsg);
                 });

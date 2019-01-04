@@ -1,14 +1,16 @@
-﻿<ul class="nav-side">
-    <li class="nav-item active">
-        <a class="link" href="user-center.html">个人中心</a>
+﻿
+<link href="~/page/common/nav-side/index.css" rel="stylesheet" />
+<ul class="nav-side">
+    @*<li class="nav-item active">
+        <a class="link" href="@Url.Action("UserCenter","UserAccount")">个人中心</a>
     </li>
     <li class="nav-item">
-        <a class="link" href="order-list.html">我的订单</a>
+        <a class="link" href="@Url.Action("OrderList","Order")">我的订单</a>
     </li>
     <li class="nav-item">
-        <a class="link" href="user-pass-update.html">修改密码</a>
+        <a class="link" href="@Url.Action("UserPassUpdate","UserAccount")">修改密码</a>
     </li>
     <li class="nav-item">
-        <a class="link" href="about.html">关于MMall</a>
-    </li>
+        <a class="link" href="@Url.Action("About","UserAccount")">关于MMall</a>
+    </li>*@
 </ul>

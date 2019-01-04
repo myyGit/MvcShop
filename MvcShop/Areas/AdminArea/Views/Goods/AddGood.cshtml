@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = null;
+}
+@using MvcShop.Entity;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddGood</title>
+</head>
+<body>
+    <div> 
+        <form method="post" action="@Url.Action("AddGood","Goods")">
+            <div>
+                <label>商品名称:</label>
+                <input type="text" name="GoodName" />
+            </div>
+            <div>
+                <label>商品关键字:</label>
+                <input type="text" name="GoodKeyWord" />
+            </div>
+            <div>
+                <label>商品价格:</label>
+                <input type="text" name="GoodPrice" />
+            </div>
+            <div>
+                <label>商品权重:</label>
+                <input type="text" name="GoodWeight" />
+            </div>
+            <div>
+                <label>商品销量:</label>
+                <input type="text" name="GoodSale" value="0" readonly />
+            </div>
+            <div>
+                <label>商品库存:</label>
+                <input type="text" name="GoodStock" />
+            </div>
+            <div>
+                <label>商品描述:</label>
+                <input type="text" name="GoodDesc" />
+            </div>
+            <div>
+                <label>商品介绍:</label>
+                <input type="text" name="GoodIntroduce" />
+            </div>
+            <div>
+                <label>商品图片:</label>
+                <input type="text" name="GoodImageUrl" />
+            </div>
+            <div>
+                <label>商品图片描述:</label>
+                <input type="text" name="GoodImageName" />
+            </div>
+            <div>
+                <label>商品类别:</label>
+                @{
+                    var list = ViewData["CategoryList"] == null ? new List<Category>() : (List<Category>)ViewData["CategoryList"];
+                }
+                <select name="CategoryId">
+                    <option value="0">请选择类别</option>
+                    @foreach (var item in list)
+                    {
+                        <option value="@item.CategoryId">@item.CategoryName</option>
+                    }
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="添加" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

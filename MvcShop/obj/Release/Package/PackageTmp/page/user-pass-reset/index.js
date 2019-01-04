@@ -83,7 +83,7 @@ var page = {
                     passwordNew     : password,
                     forgetToken     : _this.data.token
                 }, function(res){
-                    window.location.href = './result.html?type=pass-reset';
+                    window.location.href = '/Home/result?type=pass-reset';
                 }, function(errMsg){
                     formError.show(errMsg);
                 });

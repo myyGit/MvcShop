@@ -72,6 +72,7 @@ namespace MvcShop.Controllers
             
         }
 
+        #region 注册
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -98,6 +99,8 @@ namespace MvcShop.Controllers
             _userService.InsertUser(userAccount);
             return Json(new SuccessResult { status = 1, data = "OK", msg = "注册成功" });
         }
+
+        #endregion
 
         public ActionResult UserCenter()
         {

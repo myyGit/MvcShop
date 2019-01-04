@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,6 +43,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -56,22 +59,21 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -113,6 +115,8 @@
     <Content Include="image\carousel\02.JPG" />
     <Content Include="image\carousel\03.JPG" />
     <Content Include="image\carousel\04.JPG" />
+    <Content Include="image\default.png" />
+    <Content Include="image\default\noimg.png" />
     <Content Include="image\floor\floor1-1.jpg" />
     <Content Include="image\floor\floor1-2.jpg" />
     <Content Include="image\floor\floor1-3.jpg" />
@@ -190,8 +194,12 @@
     <Content Include="page\list\index.string" />
     <Content Include="page\user-center-update\index.string" />
     <Content Include="page\user-center\index.string" />
+    <Content Include="Areas\AdminArea\Views\web.config" />
+    <Content Include="Areas\AdminArea\Views\Goods\AddGood.cshtml" />
+    <Content Include="Areas\AdminArea\Views\Category\AddCategory.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -205,7 +213,9 @@
     <Content Include="util\slider\index.css" />
     <Content Include="util\slider\index.js" />
     <Content Include="util\slider\unslider.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_LayoutOne.cshtml" />
     <Content Include="Views\CommonPage\footer.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -223,6 +233,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\AdminArea\AdminAreaAreaRegistration.cs" />
+    <Compile Include="Areas\AdminArea\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\AdminArea\Controllers\GoodsController.cs" />
+    <Compile Include="Areas\AdminArea\Models\AddGoodModel.cs" />
+    <Compile Include="common\CategoryTree.cs" />
     <Compile Include="common\SuccessResult.cs" />
     <Compile Include="Controllers\CommonPageController.cs" />
     <Compile Include="Controllers\GoodsController.cs" />
@@ -263,6 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\AdminArea\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvcShop.Common\MvcShop.Common.csproj">

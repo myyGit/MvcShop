@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    @RenderPage("~/Views/CommonPage/headCommon.cshtml")
+    <title>@ViewBag.Title - happymmall电商平台</title>
+    <link href="~/page/common/footer/index.css" rel="stylesheet" />
+    <link href="~/page/common/layout.css" rel="stylesheet" />
+    <script src="~/js/jquery.min.js"></script>
+    <link href="~/page/common/nav-side/index.css" rel="stylesheet" />
+</head>
+<body>
+    @*顶部*@
+    @{
+        Html.RenderAction("Nav", "CommonPage");
+    }
+    @*@RenderPage("~/Views/CommonPage/nav.cshtml", new { IsLogin = ViewBag.IsLogin, UserName = ViewBag.UserName, CartNum = ViewBag.CartNum })*@
+    @*头部*@
+    @RenderPage("~/Views/CommonPage/header.cshtml")
+    @*@RenderPage("~/Views/CommonPage/navSimple.cshtml")*@
+
+    <div class="crumb">
+        <div class="w">
+            <div class="crumb-con">
+                <a class="link" href="./index.html">MMall</a>
+                <span>></span>
+                <span class="link-text">@ViewBag.LittleTitle</span>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrap w">
+        @RenderPage("~/Views/CommonPage/navSide.cshtml")
+        @RenderBody()
+    </div>
+    @*尾部*@
+    @RenderPage("~/Views/CommonPage/footer.cshtml")
+</body>
+</html>

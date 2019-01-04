@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = null;
+    Layout = null;
+}
+
+<script src="~/page/common/nav/index.js"></script>
+<link href="~/page/common/nav/index.css" rel="stylesheet" />
+<div class="nav">
+    <div class="w">
+        <div class="user-info">
+            @if (ViewBag.IsLogin)
+            {
+                <span class="user login">
+                    <span class="link-text">
+                        欢迎，
+                        <span class="username">@ViewBag.UserName</span>
+                    </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="link js-logout"><a href="@Url.Action("LogOut","UserAccount")">退出</a></span>
+                </span>
+            }
+            else
+            {
+                <span class="user not-login">
+                    <a class="link js-login" href="@Url.Action("Login","UserAccount")">登录</a>
+                    <span class="link js-register"><a href="@Url.Action("Register","UserAccount")">注册</a></span>
+                </span>
+            }
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a class="link" href="@Url.Action("Cart","Order")">
+                    <i class="fa fa-shopping-cart"></i>
+                    购物车(<span class="cart-count">@ViewBag.CartNum</span>)
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="link" href="@Url.Action("OrderList","Order")">我的订单</a>
+            </li>
+            <li class="nav-item">
+                <a class="link" href="@Url.Action("UserCenter","UserAccount")">我的MMall</a>
+            </li>
+            <li class="nav-item">
+                <a class="link" href="@Url.Action("About","Home")">关于MMall</a>
+            </li>
+        </ul>
+    </div>
+</div>

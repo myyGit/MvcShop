@@ -90,3 +90,5 @@ F:\个人网站\MvcShop\MvcShop\bin\Autofac.Integration.Mvc.xml
 F:\个人网站\MvcShop\MvcShop\bin\EntityFramework.xml
 F:\个人网站\MvcShop\MvcShop\bin\EntityFramework.SqlServer.xml
 F:\个人网站\MvcShop\MvcShop\bin\Newtonsoft.Json.xml
+F:\个人网站\MvcShop\MvcShop\bin\MvcShop.Data.dll
+F:\个人网站\MvcShop\MvcShop\bin\MvcShop.Data.pdb

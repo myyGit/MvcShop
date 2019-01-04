@@ -32,16 +32,19 @@ namespace MvcShop
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 #pragma warning disable CS0618 // 类型或成员已过时
             builder.RegisterType<UserService>().As<IUserService>().InstancePerHttpRequest();
+            builder.RegisterType<GoodService>().As<IGoodService>().InstancePerHttpRequest();
+            builder.RegisterType<CategoryService>().As<ICategoryService>().InstancePerHttpRequest();
 #pragma warning restore CS0618 // 类型或成员已过时
+            #region 链接
             builder.Register<IDbContext>(p => new MvcShopContext(ConfigurationManager.AppSettings["CoreConString"].ToString())).Named<IDbContext>("coreConString");
             builder.RegisterGeneric(typeof(EfRepository<>)).As(typeof(IRepository<>))
                .WithParameter(ResolvedParameter.ForNamed<IDbContext>("coreConString"))
                .InstancePerHttpRequest();
-
+            #endregion
             IContainer container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));  //注册MVC容器
             System.Net.ServicePointManager.DefaultConnectionLimit = 512;
-            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);
+            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
         }
         /// <summary>
         /// https专用 防止报SSL/TLS 安全通道建立信任关系

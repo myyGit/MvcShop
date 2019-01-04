@@ -1,0 +1,6 @@
+F:\个人网站\MvcShop\MvcShop.Data\bin\Release\MvcShop.Data.dll
+F:\个人网站\MvcShop\MvcShop.Data\bin\Release\MvcShop.Data.pdb
+F:\个人网站\MvcShop\MvcShop.Data\obj\Release\MvcShop.Data.csprojAssemblyReference.cache
+F:\个人网站\MvcShop\MvcShop.Data\obj\Release\MvcShop.Data.csproj.CoreCompileInputs.cache
+F:\个人网站\MvcShop\MvcShop.Data\obj\Release\MvcShop.Data.dll
+F:\个人网站\MvcShop\MvcShop.Data\obj\Release\MvcShop.Data.pdb

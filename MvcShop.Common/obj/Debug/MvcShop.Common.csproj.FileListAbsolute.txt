@@ -6,4 +6,3 @@ F:\个人网站\MvcShop\MvcShop.Common\bin\Debug\Newtonsoft.Json.xml
 F:\个人网站\MvcShop\MvcShop.Common\obj\Debug\MvcShop.Common.csproj.CopyComplete
 F:\个人网站\MvcShop\MvcShop.Common\obj\Debug\MvcShop.Common.dll
 F:\个人网站\MvcShop\MvcShop.Common\obj\Debug\MvcShop.Common.pdb
-F:\个人网站\MvcShop\MvcShop.Common\obj\Debug\MvcShop.Common.csprojAssemblyReference.cache
