@@ -26,11 +26,13 @@ var page = {
             } else {
                 $(".cart-select-all").prop("checked", false);
             }
+            _this.JudgeCount();
         });
         // 商品的全选 / 取消全选
         $(document).on('click', '.cart-select-all', function(){
             $(".cart-select-all").prop("checked", $(this).prop('checked'));
             $(".cart-list input:checkbox").prop("checked", $(this).prop('checked'));
+            _this.JudgeCount();
         });
         // 商品数量的变化
         $(document).on('click', '.count-btn', function(){
@@ -101,10 +103,11 @@ var page = {
     },
     JudgeCount : function () {
         var heJi = 0;
-        console.log($(".submit-total").html());
-        $(".cart-list .cell-total").each(function (e) {
-            var total = parseInt($(this).html().replace("￥", ""))
-            heJi = heJi + total;
+        $('.cart-list input[type=checkbox]:checked').each(function () {
+            var aa = $(this).parents('.cart-table').eq(0).find(".cell-total").each(function (e) {
+                var total = parseInt($(this).html().replace("￥", ""))
+                heJi = heJi + total;
+            })
         })
         $(".submit-total").html("￥" + heJi)
     },

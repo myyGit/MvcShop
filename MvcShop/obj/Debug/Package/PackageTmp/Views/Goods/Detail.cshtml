@@ -3,73 +3,76 @@
     ViewBag.Title = "商品详情";
     Layout = "~/Views/Shared/_LayoutOne.cshtml";
 }
+@model Good
+@using MvcShop.Entity;
 <link href="~/page/detail/index.css" rel="stylesheet" />
+<script src="~/page/detail/indexMvc.js"></script>
 <div class="crumb">
     <div class="w">
         <div class="crumb-con">
             <a class="link" href="./index.html">MMall</a>
             <span>></span>
-            <span class="link-text">标题</span>
+            <span class="link-text">商品详情</span>
         </div>
     </div>
 </div>
 <div class="page-wrap w">
-    <div class="intro-wrap">
-        <div class="p-img-con">
-            <div class="main-img-con">
-                <img class="main-img" src="images/da01.jpg" alt="冰箱" />
+    @if (Model == null)
+    {
+        <p class="err-tip">此商品太淘气，找不到了</p>
+    }
+    else
+    {
+        <div class="intro-wrap">
+            <div class="p-img-con">
+                <div class="main-img-con">
+                    <img class="main-img" src="/image/goods/da01.jpg" alt="冰箱" />
+                </div>
+                <ul class="p-img-list">
+                    <li class="p-img-item">
+                        <img class="p-img" src="/image/goods/da01.jpg" alt="冰箱1" />
+                    </li>
+                    <li class="p-img-item">
+                        <img class="p-img" src="/image/goods/da02.jpg" alt="冰箱2" />
+                    </li>
+                    <li class="p-img-item">
+                        <img class="p-img" src="/image/goods/da03.jpg" alt="冰箱3" />
+                    </li>
+                </ul>
             </div>
-            <ul class="p-img-list">
-                <li class="p-img-item">
-                    <img class="p-img" src="images/07.JPG" alt="冰箱1" />
-                </li>
-                <li class="p-img-item">
-                    <img class="p-img" src="images/2.jpg" alt="冰箱2" />
-                </li>
-                <li class="p-img-item">
-                    <img class="p-img" src="images/4.jpg" alt="冰箱3" />
-                </li>
-            </ul>
+            <div class="p-info-con">
+                <h1 class="p-name">@Model.GoodName</h1>
+                <p class="p-subtitle">@Model.GoodDesc</p>
+                <div class="p-info-item p-price-con">
+                    <span class="label">价格:</span>
+                    <span class="info">￥@Model.GoodPrice</span>
+                </div>
+                <div class="p-info-item">
+                    <span class="label">库存:</span>
+                    <span class="info struct">@Model.GoodStock</span>
+                </div>
+                <div class="p-info-item p-count-con">
+                    <span class="label">数量:</span>
+                    <input class="p-count" value="1" readonly="" />
+                    <span class="p-count-btn plus">+</span>
+                    <span class="p-count-btn minus">-</span>
+                </div>
+                <div class="p-info-item">
+                    <a class="btn cart-add">加入购物车</a>
+                </div>
+            </div>
         </div>
-        <div class="p-info-con">
-            <h1 class="p-name">冰箱名称</h1>
-            <p class="p-subtitle">标题呢</p>
-            <div class="p-info-item p-price-con">
-                <span class="label">价格:</span>
-                <span class="info">￥3000</span>
+        <div class="detail-wrap">
+            <div class="detail-tab-con">
+                <ul class="tab-list">
+                    <li class="tab-item active">详细描述</li>
+                </ul>
             </div>
-            <div class="p-info-item">
-                <span class="label">库存:</span>
-                <span class="info struct">30</span>
-            </div>
-            <div class="p-info-item p-count-con">
-                <span class="label">数量:</span>
-                <input class="p-count" value="1" readonly="" />
-                <span class="p-count-btn plus">+</span>
-                <span class="p-count-btn minus">-</span>
-            </div>
-            <div class="p-info-item">
-                <a class="btn cart-add">加入购物车</a>
+            <div class="detail-con">
+                @Model.GoodIntroduce
             </div>
         </div>
-    </div>
-    <div class="detail-wrap">
-        <div class="detail-tab-con">
-            <ul class="tab-list">
-                <li class="tab-item active">详细描述</li>
-            </ul>
-        </div>
-        <div class="detail-con">
-            详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃<br />
-            详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃<br />
-            详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃<br />
-            详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃<br />
-            详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃<br />
-            详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃<br />
-            详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃<br />
-            详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃详细描述酸度阿叔荒芜的娃<br />
-        </div>
-    </div>
+    }
 </div>
 
 

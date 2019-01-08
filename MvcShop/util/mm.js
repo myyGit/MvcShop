@@ -7,6 +7,7 @@ var _mm = {
     // 网络请求
     request : function(param){
         var _this = this;
+        console.log(param.data)
         $.ajax({
             type        : param.method  || 'get',
             url         : param.url     || '',
@@ -76,10 +77,10 @@ var _mm = {
     },
     // 统一登录处理
     doLogin : function(){
-        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = '/UserAccount/Login?redirect=' + encodeURIComponent(window.location.href);
     },
     goHome : function(){
-        window.location.href = './index.html';
+        window.location.href = '/';
     }
 };
 

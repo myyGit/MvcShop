@@ -13,10 +13,11 @@ var _cart = {
     // 添加到购物车
     addToCart : function(productInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/cart/add.do'),
+            url     : _mm.getServerUrl('/Cart/Add'),
             data    : productInfo,
             success : resolve,
-            error   : reject
+            error: reject,
+            method:"POST"
         });
     },
     // 获取购物车列表
@@ -77,7 +78,7 @@ var _cart = {
     // 删除指定商品
     deleteProduct : function(productIds, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/cart/delete_product.do'),
+            url     : _mm.getServerUrl('/Cart/DeleteProduct'),
             data    : {
                 productIds : productIds
             },

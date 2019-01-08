@@ -10,3 +10,9 @@ F:\个人网站\MvcShop\MvcShop.Service\obj\Debug\MvcShop.Service.csprojAssembly
 F:\个人网站\MvcShop\MvcShop.Service\obj\Debug\MvcShop.Service.csproj.CopyComplete
 F:\个人网站\MvcShop\MvcShop.Service\obj\Debug\MvcShop.Service.dll
 F:\个人网站\MvcShop\MvcShop.Service\obj\Debug\MvcShop.Service.pdb
+F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\MvcShop.Service.dll.config
+F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.Extended.dll
+F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.SqlServer.dll
+F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.Extended.xml
+F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.Extended.dll.config
+F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.SqlServer.xml

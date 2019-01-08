@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MvcShop.Entity;
+using EntityFramework.Extensions;
 
 namespace MvcShop.Service
 {
@@ -47,13 +46,18 @@ namespace MvcShop.Service
             return resultList;
         }
 
-        public List<Good> GetGoodsByCategoryId(int categoryId, out int count, int pageSize = 10, int pageIndex = 1)
+        public List<Good> GetGoodsByCategoryId(int? categoryId, out int count, int pageSize = 10, int pageIndex = 1)
         {
             count = 0;
-            //return _goodReposity.Table.Where(p => p.GoodId == goodId).FirstOrDefault();
-            var listQuery = _goodReposity.Table.Where(p => p.CategoryId == categoryId);
-            count = listQuery.Count();
-            var list = listQuery.Skip(pageSize * (pageIndex - 1)).Take(pageSize).OrderByDescending(p=>p.GoodWeight).ThenByDescending(p=>p.CreateTime).ToList();
+            var listQuery = _goodReposity.Table.Where(p=>p.IsActive);
+            if (categoryId != null && categoryId > 0)
+            {
+                listQuery = listQuery.Where(p => p.CategoryId == categoryId);
+            }
+            count = listQuery.FutureCount();  
+            
+            listQuery = listQuery.OrderByDescending(p => p.GoodWeight).ThenByDescending(p => p.CreateTime).Skip(pageSize * (pageIndex - 1)).Take(pageSize);
+            var list = listQuery.Future().ToList();
             return list;
         }
 
@@ -86,5 +90,10 @@ namespace MvcShop.Service
             _goodImageReposity.Insert(goodImage);
         }
 
+        public void UpdateGood(Good good)
+        {
+            good.LastChangeTime = DateTime.Now;
+            _goodReposity.Update(good);
+        }
     }
 }

@@ -10,3 +10,6 @@ F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.csproj.CopyCompl
 F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.dll
 F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.pdb
 F:\个人网站\MvcShop\MvcShop.Entity\obj\Debug\MvcShop.Entity.csprojAssemblyReference.cache
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\EntityFramework.Extended.dll
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\EntityFramework.Extended.xml
+F:\个人网站\MvcShop\MvcShop.Entity\bin\Debug\EntityFramework.Extended.dll.config

@@ -92,3 +92,7 @@ F:\个人网站\MvcShop\MvcShop\bin\zh-Hans\System.Web.Mvc.resources.dll
 F:\个人网站\MvcShop\MvcShop\obj\Debug\MvcShop.csproj.CopyComplete
 F:\个人网站\MvcShop\MvcShop\obj\Debug\MvcShop.dll
 F:\个人网站\MvcShop\MvcShop\obj\Debug\MvcShop.pdb
+F:\个人网站\MvcShop\MvcShop\bin\EntityFramework.Extended.dll
+F:\个人网站\MvcShop\MvcShop\bin\MvcShop.Service.dll.config
+F:\个人网站\MvcShop\MvcShop\bin\EntityFramework.Extended.xml
+F:\个人网站\MvcShop\MvcShop\bin\EntityFramework.Extended.dll.config

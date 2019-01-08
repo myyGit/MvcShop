@@ -46,10 +46,11 @@ namespace MvcShop.Utility
                 {
                     SuccessResult successResult = new SuccessResult()
                     {
-                        status = 2,
+                        status = 0,
                         data = "No Login",
                         msg = "没有登录，无权访问"
                     };
+                    context.Session["CurrentUrl"] = context.Request.Url;
                     filterContext.Result = new JsonResult()
                     {
                         Data = successResult
@@ -59,7 +60,7 @@ namespace MvcShop.Utility
                 {
                     //跳转登录页面 短路器--停止当前流程，去别的执行流程
                     filterContext.Result = new RedirectResult(_loginUrl);
-                    context.Session["CurrentUrl"] = context.Request.Url;
+                    
                 }
             }
             //base.OnAuthorization(filterContext);

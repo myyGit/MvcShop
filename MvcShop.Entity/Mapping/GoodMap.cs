@@ -17,7 +17,6 @@ namespace MvcShop.Entity
                 .Ignore(p => p.Id);
 
             this.Property(p => p.GoodId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            
             this.HasRequired(p => p.Category).WithMany().HasForeignKey(p => p.CategoryId).WillCascadeOnDelete(false);
         }
     }

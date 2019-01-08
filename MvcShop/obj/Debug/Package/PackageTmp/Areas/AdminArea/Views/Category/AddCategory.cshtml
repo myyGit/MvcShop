@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddCategory</title>
+</head>
+<body>
+    <div> 
+        <form action="@Url.Action("AddCategory","Category")" method="post">
+            <div>
+                <label>目录名称：</label>
+                <input type="text" name="CategoryName" />
+            </div>
+            <div>
+                <label>目录权重：</label>
+                <input type="text" name="Weight" />
+            </div>
+            <div>
+                <label>目录级别：</label>
+                <input type="text" name="Levels" value="2" readonly />
+            </div>
+            <div>
+                <label>PId：</label>
+                <input type="text" name="PId" />
+            </div>
+            <div>
+                <input type="submit" value="添加" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

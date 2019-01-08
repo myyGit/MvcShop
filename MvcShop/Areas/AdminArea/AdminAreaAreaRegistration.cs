@@ -17,7 +17,8 @@ namespace MvcShop.Areas.AdminArea
             context.MapRoute(
                 "AdminArea_default",
                 "AdminArea/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                new string[] { "MvcShop.Areas.AdminArea.Controllers" }
             );
         }
     }

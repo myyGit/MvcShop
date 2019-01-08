@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Common;
+using MvcShop.Entity;
+using MvcShop.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,14 +11,33 @@ namespace MvcShop.Controllers
 {
     public class GoodsController : Controller
     {
-        // GET: Goods
-        public ActionResult List()
+        private readonly IGoodService _goodService;
+        private readonly ICategoryService _categoryService;
+        public GoodsController(IGoodService goodService, ICategoryService categoryService)
         {
-            return View();
+            _goodService = goodService;
+            _categoryService = categoryService;
         }
-        public ActionResult Detail()
+        // GET: Goods
+        public ActionResult List(int? categoryId=null)
         {
-            return View();
+            int count = 0;
+            List<Good> goodList = _goodService.GetGoodsByCategoryId(categoryId,out count);
+            //List<GoodListModel> models = new List<GoodListModel>();
+            //models.O2D(goodList);
+            List<int> goodIds = goodList.Select(p => p.GoodId).ToList();
+            var imgList = _goodService.GetGoodImagesByGoodIds(goodIds);
+            ViewData["ImgList"] = imgList;
+            return View(goodList);
+        }
+        public ActionResult Detail(int? productId=null)
+        {
+            if (productId == null || productId <= 0)
+            {
+                return View();
+            }
+            Good good = _goodService.GetGoodById(Convert.ToInt32(productId));
+            return View(good);
         }
     }
 }

@@ -7,7 +7,52 @@
 
 <link href="~/page/index/index.css" rel="stylesheet" />
 <script src="~/page/index/index.js"></script>
+<style>
+    #span_btn {
+        position: absolute;
+        top: 320px;
+        left: 650px;
+        font-size: 30px;
+        color: white;
+    }
 
+        #span_btn span {
+            padding: 0 2px;
+            cursor: pointer;
+        }
+
+        #span_btn .active {
+            color: brown;
+        }
+
+    #nextImg {
+        position: absolute;
+        font-size: 30px;
+        width: 50px;
+        left: 1025px;
+        background-color: white;
+        height: 50px;
+        top: 160px;
+        text-align: center;
+        opacity: 0.5;
+        color: black;
+        text-decoration: none;
+    }
+
+    #preImg {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        position: absolute;
+        left: 255px;
+        top: 160px;
+        background-color: white;
+        text-align: center;
+        opacity: 0.5;
+        color: black;
+        text-decoration: none;
+    }
+</style>
 <div class="w">
     <ul class="keywords-list">
         <li class="keywords-item">
@@ -60,24 +105,15 @@
         </li>
     </ul>
     <div class="banner-con">
-        @*<div class="banner-arrow">*@
-           @* <div class="prev">上一个</div>*@
-            <a href="">
-                <img src="~/image/carousel/02.JPG" width="100%" height="100%" />
-            </a>
-            <a href="">
-                <img src="~/image/carousel/03.JPG" width="100%" height="100%" />
-            </a>
-            <a href="">
-                <img src="~/image/carousel/04.JPG" width="100%" height="100%" />
-            </a>
-           @* <div class="next">下一个</div>*@
-        @*</div>*@
-        
         <!--<div class="loading">
 
-    </div>-->
+        </div>-->
     </div>
+    <span id="span_btn">
+
+        <!--<a href="javascript:void(0)" id="nextImg"> &gt; </a>
+        <a href="javascript:void(0)" id="preImg"> &lt; </a>-->
+    </span>
 </div>
 <div class="w">
     @{
@@ -88,6 +124,16 @@
     }
     @foreach (var item in categoryList)
     {
+        #region 判断是否有对应的商品
+        List<int> childrenIds = item.Children.Take(5).Select(p => p.CategoryId).ToList();
+        List<int> goodCategoryIds = list.Select(p => p.CategoryId).ToList();
+        var listIds = childrenIds.Intersect(goodCategoryIds);
+        if (listIds != null && listIds.Count() <= 0)
+        {
+            continue;
+        }
+        #endregion
+
         string floor = "F" + i;
         <div class="floor-wrap">
             <h1 class="floor-title">
@@ -98,7 +144,7 @@
                 @foreach (var categortLevel2 in item.Children.Take(5))
                 {
                     var goodAndCategory = list.Where(p => p.CategoryId == categortLevel2.CategoryId).FirstOrDefault();
-                    if (goodAndCategory ==null)
+                    if (goodAndCategory == null)
                     {
                         continue;
                     }
@@ -127,7 +173,7 @@
         </div>
         i++;
     }
-    
+
     @*<div class="floor-wrap">
             <h1 class="floor-title">
                 F2 数码3C

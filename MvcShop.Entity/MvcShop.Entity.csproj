@@ -37,6 +37,9 @@
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
@@ -54,6 +57,7 @@
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Base\IDbContext.cs" />
     <Compile Include="CarouselImage.cs" />
+    <Compile Include="Cart.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Base\EfRepository.cs" />
@@ -62,6 +66,7 @@
     <Compile Include="Good.cs" />
     <Compile Include="GoodImage.cs" />
     <Compile Include="Mapping\GoodImageMap.cs" />
+    <Compile Include="Mapping\CartMap.cs" />
     <Compile Include="Mapping\GoodMap.cs" />
     <Compile Include="Mapping\CategoryMap.cs" />
     <Compile Include="Mapping\CarouselImageMap.cs" />

@@ -9,6 +9,15 @@
     <_PublishTargetUrl>C:\Users\myysql\Desktop\MvcShop_Server</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="Areas/AdminArea/Views/Category/AddCategory.cshtml">
+      <publishTime>01/04/2019 16:08:09</publishTime>
+    </File>
+    <File Include="Areas/AdminArea/Views/Goods/AddGood.cshtml">
+      <publishTime>01/04/2019 16:26:41</publishTime>
+    </File>
+    <File Include="Areas/AdminArea/Views/web.config">
+      <publishTime>01/04/2019 15:14:34</publishTime>
+    </File>
     <File Include="bin/Autofac.dll">
       <publishTime>05/09/2018 11:57:54</publishTime>
     </File>
@@ -17,6 +26,12 @@
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/23/2017 13:15:18</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.Extended.dll">
+      <publishTime>07/09/2015 16:52:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.Extended.dll.config">
+      <publishTime>07/09/2015 16:52:42</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>10/23/2017 13:15:20</publishTime>
@@ -28,37 +43,40 @@
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/MvcShop.Common.dll">
-      <publishTime>01/04/2019 14:49:07</publishTime>
+      <publishTime>01/07/2019 15:30:20</publishTime>
     </File>
     <File Include="bin/MvcShop.Common.pdb">
-      <publishTime>01/04/2019 14:49:07</publishTime>
+      <publishTime>01/07/2019 15:30:20</publishTime>
     </File>
     <File Include="bin/MvcShop.Data.dll">
-      <publishTime>01/04/2019 14:49:07</publishTime>
+      <publishTime>01/07/2019 15:30:20</publishTime>
     </File>
     <File Include="bin/MvcShop.Data.pdb">
-      <publishTime>01/04/2019 14:49:07</publishTime>
+      <publishTime>01/07/2019 15:30:20</publishTime>
     </File>
     <File Include="bin/MvcShop.dll">
-      <publishTime>01/04/2019 14:49:08</publishTime>
+      <publishTime>01/08/2019 17:14:50</publishTime>
     </File>
     <File Include="bin/MvcShop.Entity.dll">
-      <publishTime>01/04/2019 14:49:07</publishTime>
+      <publishTime>01/08/2019 15:39:09</publishTime>
     </File>
     <File Include="bin/MvcShop.Entity.dll.config">
       <publishTime>01/04/2019 14:48:38</publishTime>
     </File>
     <File Include="bin/MvcShop.Entity.pdb">
-      <publishTime>01/04/2019 14:49:07</publishTime>
+      <publishTime>01/08/2019 15:39:09</publishTime>
     </File>
     <File Include="bin/MvcShop.pdb">
-      <publishTime>01/04/2019 14:49:08</publishTime>
+      <publishTime>01/08/2019 17:14:50</publishTime>
     </File>
     <File Include="bin/MvcShop.Service.dll">
-      <publishTime>01/04/2019 14:49:08</publishTime>
+      <publishTime>01/08/2019 16:07:55</publishTime>
+    </File>
+    <File Include="bin/MvcShop.Service.dll.config">
+      <publishTime>01/08/2019 13:29:56</publishTime>
     </File>
     <File Include="bin/MvcShop.Service.pdb">
-      <publishTime>01/04/2019 14:49:08</publishTime>
+      <publishTime>01/08/2019 16:07:55</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>03/24/2018 17:44:14</publishTime>
@@ -384,6 +402,294 @@
     <File Include="image/goods/07.JPG">
       <publishTime>11/22/2018 17:18:14</publishTime>
     </File>
+    <File Include="image/goods/da01.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/da01Big.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/da02.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/da02Big.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/da03.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/da03Big.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/da04.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/da05.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/da06.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/ling01.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/ling02.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
+    <File Include="image/goods/ling03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/ling04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/ling05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/ling06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/ling07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/ling08.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/mian01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/mian02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/mian03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/mian04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/mian05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/mian06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/mian07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nan01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nan02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nan03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nan04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nan05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nan06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nan07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nanxie01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nanxie02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nanxie03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nanxie04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nanxie05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nanxie06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nanxie07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv08.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv09.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nv10.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nvxie01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nvxie02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nvxie03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nvxie04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nvxie05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nvxie06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/nvxie07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shen01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shen02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shen03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shen04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shen05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shen06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shu01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shu02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shu03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shu04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shu05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shu06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shu07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/shu08.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tong01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tong02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tong03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tong04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tong05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tong06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tong07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tong08.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tou01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tou02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tou03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tou04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tou05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/tou06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/xiao01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/xiao02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/xiao03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/xiao04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/xiao05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/xiao06.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/xiao07.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/zhong01.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/zhong02.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/zhong03.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/zhong04.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/zhong05.jpg">
+      <publishTime>01/08/2019 14:19:01</publishTime>
+    </File>
+    <File Include="image/goods/zhong06.jpg">
+      <publishTime>01/08/2019 14:19:00</publishTime>
+    </File>
     <File Include="image/icon/loading.gif">
       <publishTime>11/22/2018 14:58:38</publishTime>
     </File>
@@ -400,7 +706,7 @@
       <publishTime>11/23/2018 14:17:54</publishTime>
     </File>
     <File Include="page/cart/indexMvc.js">
-      <publishTime>01/02/2019 09:34:05</publishTime>
+      <publishTime>01/08/2019 16:56:09</publishTime>
     </File>
     <File Include="page/common/footer/index.css">
       <publishTime>11/22/2018 14:24:15</publishTime>
@@ -447,6 +753,9 @@
     <File Include="page/detail/index.string">
       <publishTime>11/22/2018 14:24:15</publishTime>
     </File>
+    <File Include="page/detail/indexMvc.js">
+      <publishTime>01/08/2019 16:07:52</publishTime>
+    </File>
     <File Include="page/index/banner.string">
       <publishTime>11/22/2018 14:24:15</publishTime>
     </File>
@@ -454,7 +763,7 @@
       <publishTime>01/04/2019 11:32:16</publishTime>
     </File>
     <File Include="page/index/index.js">
-      <publishTime>11/22/2018 15:45:25</publishTime>
+      <publishTime>01/08/2019 10:42:54</publishTime>
     </File>
     <File Include="page/list/index.css">
       <publishTime>11/22/2018 14:24:15</publishTime>
@@ -535,7 +844,7 @@
       <publishTime>11/22/2018 14:07:38</publishTime>
     </File>
     <File Include="service/cart-service.js">
-      <publishTime>11/22/2018 16:01:25</publishTime>
+      <publishTime>01/08/2019 16:57:27</publishTime>
     </File>
     <File Include="service/product-service.js">
       <publishTime>11/22/2018 15:35:33</publishTime>
@@ -544,7 +853,7 @@
       <publishTime>12/03/2018 14:00:46</publishTime>
     </File>
     <File Include="util/mm.js">
-      <publishTime>11/23/2018 17:23:28</publishTime>
+      <publishTime>01/08/2019 16:00:45</publishTime>
     </File>
     <File Include="util/pagination/index.css">
       <publishTime>11/22/2018 15:23:37</publishTime>
@@ -564,8 +873,11 @@
     <File Include="util/slider/unslider.js">
       <publishTime>11/22/2018 15:23:37</publishTime>
     </File>
+    <File Include="Views/Cart/List.cshtml">
+      <publishTime>01/08/2019 16:29:05</publishTime>
+    </File>
     <File Include="Views/CommonPage/footer.cshtml">
-      <publishTime>11/22/2018 14:13:53</publishTime>
+      <publishTime>01/08/2019 14:41:14</publishTime>
     </File>
     <File Include="Views/CommonPage/headCommon.cshtml">
       <publishTime>11/22/2018 14:19:02</publishTime>
@@ -574,7 +886,7 @@
       <publishTime>11/22/2018 16:18:14</publishTime>
     </File>
     <File Include="Views/CommonPage/nav.cshtml">
-      <publishTime>11/30/2018 13:43:22</publishTime>
+      <publishTime>01/08/2019 16:24:46</publishTime>
     </File>
     <File Include="Views/CommonPage/navSide.cshtml">
       <publishTime>12/03/2018 11:31:21</publishTime>
@@ -583,16 +895,16 @@
       <publishTime>11/22/2018 15:14:34</publishTime>
     </File>
     <File Include="Views/Goods/Detail.cshtml">
-      <publishTime>11/22/2018 17:15:04</publishTime>
+      <publishTime>01/08/2019 16:06:39</publishTime>
     </File>
     <File Include="Views/Goods/List.cshtml">
-      <publishTime>11/22/2018 17:23:14</publishTime>
+      <publishTime>01/08/2019 16:23:28</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>01/04/2019 14:51:54</publishTime>
+      <publishTime>01/08/2019 10:21:19</publishTime>
     </File>
     <File Include="Views/Home/Result.cshtml">
-      <publishTime>12/03/2018 13:59:22</publishTime>
+      <publishTime>01/08/2019 16:12:45</publishTime>
     </File>
     <File Include="Views/Order/Cart.cshtml">
       <publishTime>11/22/2018 16:37:44</publishTime>
@@ -631,7 +943,7 @@
       <publishTime>11/22/2018 14:07:33</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/04/2019 14:52:29</publishTime>
+      <publishTime>01/08/2019 17:14:50</publishTime>
     </File>
   </ItemGroup>
 </Project>

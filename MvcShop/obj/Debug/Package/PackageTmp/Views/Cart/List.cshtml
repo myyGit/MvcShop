@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutOne.cshtml";
+}
+@model List<Cart>
+    @using MvcShop.Entity;
+    <link href="~/page/cart/index.css" rel="stylesheet" />
+    <script src="~/page/cart/indexMvc.js"></script>
+
+    <div class="crumb">
+        <div class="w">
+            <div class="crumb-con">
+                <a class="link" href="./index.html">MMall</a>
+                <span>></span>
+                <span class="link-text">购物车</span>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrap w">
+        @if (Model == null || Model.Count <= 0)
+        {
+            <p class="err-tip">
+                <span>您的购物车空空如也，</span>
+                <a href="@Url.Action("List","Goods")">立即去购物</a>
+            </p>
+        }
+        else
+        {
+            <div class="cart-header">
+                <table class="cart-table">
+                    <tr>
+                        <th class="cart-cell cell-check">
+                            <label class="cart-label">
+                                <input type="checkbox" class="cart-select-all" checked />
+                                <!--<input type="checkbox" class="cart-select-all" />-->
+                                <span>全选</span>
+                            </label>
+                        </th>
+                        <th class="cart-cell cell-info">商品信息</th>
+                        <th class="cart-cell cell-price">单价</th>
+                        <th class="cart-cell cell-count">数量</th>
+                        <th class="cart-cell cell-total">合计</th>
+                        <th class="cart-cell cell-opera">操作</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="cart-list">
+                @{ 
+                    var total = 0m;
+                }
+                @foreach (var item in Model)
+                {
+                    <table class="cart-table" data-product-id="1">
+                        <tr>
+                            <td class="cart-cell cell-check">
+                                <label class="cart-label">
+                                    <input type="checkbox" class="cart-select" checked />
+                                </label>
+                            </td>
+                            <td class="cart-cell cell-img">
+                                <a class="link" href="./detail.html?productId=@item.GoodId">
+                                    <img class="p-img" src="/image/goods/da01.jpg" alt="@item.Good.GoodName" />
+                                </a>
+                            </td>
+                            <td class="cart-cell cell-info">
+                                <a class="link" href="./detail.html?productId=1">@item.Good.GoodName</a>
+                            </td>
+                            <td class="cart-cell cell-price">￥@item.GoodPrice</td>
+                            <td class="cart-cell cell-count">
+                                <span class="count-btn minus">-</span>
+                                <input class="count-input" value="@item.Num" data-max="@item.Good.GoodStock" />
+                                <span class="count-btn plus">+</span>
+                            </td>
+                            <td class="cart-cell cell-total">￥@(item.Num * item.GoodPrice)</td>
+                            <td class="cart-cell cell-opera">
+                                <span class="link cart-delete">删除</span>
+                            </td>
+                        </tr>
+                    </table>
+                    total += (item.Num * item.GoodPrice);
+                }
+            </div>
+            <div class="cart-footer">
+                <div class="select-con">
+                    <label>
+                        <input type="checkbox" class="cart-select-all" checked />
+                        <!--<input type="checkbox" class="cart-select-all" />-->
+                        <span>全选</span>
+                    </label>
+                </div>
+                <div class="delete-con">
+                    <span class="link delete-selected">
+                        <i class="fa fa-trash-o"></i>
+                        <span>删除选中</span>
+                    </span>
+                </div>
+                <div class="submit-con">
+                    <span>总价：</span>
+                    <span class="submit-total">￥@total</span>
+                    <span class="btn btn-submit">去结算</span>
+                </div>
+            </div>
+        }
+    </div>
+
