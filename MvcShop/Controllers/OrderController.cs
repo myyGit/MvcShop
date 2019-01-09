@@ -12,12 +12,7 @@ namespace MvcShop.Controllers
     {
         // GET: Order
         
-        public ActionResult Cart()
-        {
-            return View();
-        }
-
-        public ActionResult OrderList()
+        public ActionResult List()
         {
             return View();
         }

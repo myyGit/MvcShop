@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "我的订单";
+    Layout = "~/Views/Shared/_LayoutOne.cshtml";
+}
+@*<link href="~/page/cart/index.css" rel="stylesheet" />
+<script src="~/page/cart/indexMvc.js"></script>*@
+<link href="~/page/order/order.css" rel="stylesheet" />
+<link href="~/page/order/base.css" rel="stylesheet" />
+<style>
+    #leftmenu {
+        width: 130px;
+        float: left;
+    }
+
+    .order_title {
+        margin-right: 10px;
+        border: 1px solid #808080;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        background-color: #ad1616;
+        color: #ffffff;
+        font-size: 17px;
+        font-family: "microsoft yahei";
+    }
+
+    .order_menu {
+        margin-right: 10px;
+        height: 310px;
+        border: 1px solid #808080;
+        text-align: center;
+    }
+
+    .order_first {
+        border-top: 1px solid #ffffff;
+        background-color: #ad1616;
+        color: #ffffff;
+        font-size: 20px;
+        font-family: "microsoft yahei";
+    }
+
+    .order_menu li {
+        font-size: 15px;
+        font-family: "microsoft yahei";
+        height: 50px;
+        line-height: 50px;
+        border-top: 1px solid #ad1616;
+    }
+
+        /*.order_menu li:hover {
+            background-color: #ad1616;
+            color: #ffffff;
+            font-size: 20px;
+            font-family: "microsoft yahei";
+            border-top: 1px solid #ffffff;
+        }*/
+</style>
+<div class="crumb">
+    <div class="w">
+        <div class="crumb-con">
+            <a class="link" href="./index.html">MMall</a>
+            <span>></span>
+            <span class="link-text">我的订单</span>
+        </div>
+    </div>
+</div>
+<div class="page-wrap w">
+    <div id="leftmenu">
+        @*<ul class="order_title">
+            <li>订单中心</li>
+        </ul>*@
+        <ul class="order_menu">
+            <li class="order_first">我的订单</li>
+            <li><a href="#" onclick="allorders()">全部订单</a></li>
+            <li><a href="#" onclick="payment()">待付款</a></li>
+            <li><a href="#" onclick="send()">待发货</a></li>
+            <li><a href="#" onclick="receive()">待收货</a></li>
+            <li><a href="#" onclick="comment()">待评价</a></li>
+        </ul>
+    </div>
+    <div class="order">
+        <table border="0">
+            <tr class="nr">
+                <th colspan="4" class="goods" style="border-left: 1px solid #D1D1D1;">商品</th>
+                <th class="price">单价(元)</th>
+                <th class="num">数量</th>
+                <th class="pay">实付款(元)</th>
+                <th class="status">交易状态</th>
+                <th class="operate" style="border-right: 1px solid #D1D1D1;">操作</th>
+            </tr>
+            <tr class="emptyTr">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+           
+            <tr class="orderNum">
+                <td>&nbsp;</td>
+                <td colspan="8">订单编号：1313123123 成交时间：2012-01-02 12:12:12</td>
+            </tr>
+            <tr class="nr">
+                <td style="border: 1px solid #D1D1D1;border-right: none;">&nbsp;</td>
+                <td id="orderid">1</td>
+                <td class="tdImg" style="border-left: none;">
+                    <img width="90" height="88" src="../../images/qi.png" />
+                </td>
+                <td class="tdGoodsName">
+                    <div class="name"><a href="#">电视</a></div>
+                    <div class="intro">电视机</div>
+                    <div class="typ">65寸</div>
+                </td>
+                <td class="tdGoodsPrice">
+                    <p><del>230.00</del></p>
+                    <p>3000</p>
+                </td>
+                <td class="tdGoodsNum">
+                    <p>1</p>
+                </td>
+                <td class="subtotal">
+                    3000
+                </td>
+                <td class="tdStatus">
+                    <label>待付款</label>
+                    <a href="#">订单详情</a>
+                </td>
+                <td class="tdOperate">
+                    <div class="caozuo">
+                       
+                        <input type="button" value="付款 " class="payBtn" name="state" onclick="UpdateStatePayment(this) " />
+
+                        @*<%
+                        }
+                        if (order.State == "未发货")
+                        {
+                        %>
+                        <input type="button" value="提醒发货 " class="payBtn" name="state" onclick="UpdateSend(this)" />
+                        <%
+                        }
+                        if (order.State == "未收货")
+                        {
+                        %>
+                        <input type="button" value="确认收货 " class="payBtn" name="state" onclick="UpdateReceive(this)" />
+                        <%
+                        }
+                        if (order.State == "未评价")
+                        {
+                        %>
+                        <input type="button" value="评价 " class="payBtn" name="state" onclick="UpdateComment(this)" />
+                        <%
+                        }
+
+                        if (order.State == "已评价")
+                        {
+                        %>
+                        <input type="button" value="追加评价" class="payBtn" />
+                        <%
+                        }
+                        %>*@
+
+                    </div>
+                </td>
+            </tr>
+            <tr class="emptyTr">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            
+
+        </table>
+    </div>
+    <!--<p class="err-tip">
+        <span>您的购物车空空如也，</span>
+        <a href="./index.html">立即去购物</a>
+    </p>-->
+</div>
+
+

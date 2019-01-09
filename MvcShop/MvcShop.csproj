@@ -268,6 +268,8 @@
     <Content Include="page\list\index.css" />
     <Content Include="page\list\index.js" />
     <Content Include="page\module.js" />
+    <Content Include="page\order\base.css" />
+    <Content Include="page\order\order.css" />
     <Content Include="page\result\index.css" />
     <Content Include="page\result\index.js" />
     <Content Include="page\user-center-update\index.css" />
@@ -294,6 +296,7 @@
     <Content Include="Areas\AdminArea\Views\web.config" />
     <Content Include="Areas\AdminArea\Views\Goods\AddGood.cshtml" />
     <Content Include="Areas\AdminArea\Views\Category\AddCategory.cshtml" />
+    <Content Include="Areas\AdminArea\Views\Goods\List.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
@@ -324,7 +327,7 @@
     <Content Include="Views\UserAccount\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="util\pagination\index.string" />
-    <Content Include="Views\Order\Cart.cshtml" />
+    <Content Include="Views\Order\List.cshtml" />
     <Content Include="Views\Goods\Detail.cshtml" />
     <Content Include="Views\Goods\List.cshtml" />
   </ItemGroup>

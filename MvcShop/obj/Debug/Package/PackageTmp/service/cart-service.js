@@ -69,10 +69,11 @@ var _cart = {
     // 更新购物车商品数量
     updateProduct : function(productInfo, resolve, reject){
         _mm.request({
-            url     : _mm.getServerUrl('/cart/update.do'),
+            url: _mm.getServerUrl('/Cart/Update'),
             data    : productInfo,
             success : resolve,
-            error   : reject
+            error: reject,
+            method : "POST"
         });
     },
     // 删除指定商品
@@ -83,7 +84,8 @@ var _cart = {
                 productIds : productIds
             },
             success : resolve,
-            error   : reject
+            error: reject,
+            method:"POST"
         });
     },
 }

@@ -14,10 +14,12 @@ namespace MvcShop.Controllers
     {
         private readonly IGoodService _goodService;
         private readonly ICategoryService _categoryService;
-        public HomeController(IGoodService goodService, ICategoryService categoryService)
+        private readonly ICartService _cartService;
+        public HomeController(IGoodService goodService, ICategoryService categoryService, ICartService cartService)
         {
             _goodService = goodService;
             _categoryService = categoryService;
+            _cartService = cartService;
         }
         // GET: Home
         public ActionResult Index()
@@ -45,7 +47,7 @@ namespace MvcShop.Controllers
                 CurrentUser currentUser = (CurrentUser)context.Session["CurrentUser"];
                 ViewBag.IsLogin = true;
                 ViewBag.UserName = currentUser.UserName;
-                ViewBag.CartNum = 2;
+                ViewBag.CartNum = _cartService.GetCartCount(currentUser.UserId);
             }
             else
             {

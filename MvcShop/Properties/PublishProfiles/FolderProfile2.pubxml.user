@@ -15,6 +15,9 @@
     <File Include="Areas/AdminArea/Views/Goods/AddGood.cshtml">
       <publishTime>01/04/2019 16:26:41</publishTime>
     </File>
+    <File Include="Areas/AdminArea/Views/Goods/List.cshtml">
+      <publishTime>01/09/2019 11:38:06</publishTime>
+    </File>
     <File Include="Areas/AdminArea/Views/web.config">
       <publishTime>01/04/2019 15:14:34</publishTime>
     </File>
@@ -55,7 +58,7 @@
       <publishTime>01/07/2019 15:30:20</publishTime>
     </File>
     <File Include="bin/MvcShop.dll">
-      <publishTime>01/08/2019 17:14:50</publishTime>
+      <publishTime>01/09/2019 14:29:43</publishTime>
     </File>
     <File Include="bin/MvcShop.Entity.dll">
       <publishTime>01/08/2019 15:39:09</publishTime>
@@ -67,16 +70,16 @@
       <publishTime>01/08/2019 15:39:09</publishTime>
     </File>
     <File Include="bin/MvcShop.pdb">
-      <publishTime>01/08/2019 17:14:50</publishTime>
+      <publishTime>01/09/2019 14:29:43</publishTime>
     </File>
     <File Include="bin/MvcShop.Service.dll">
-      <publishTime>01/08/2019 16:07:55</publishTime>
+      <publishTime>01/09/2019 14:29:42</publishTime>
     </File>
     <File Include="bin/MvcShop.Service.dll.config">
       <publishTime>01/08/2019 13:29:56</publishTime>
     </File>
     <File Include="bin/MvcShop.Service.pdb">
-      <publishTime>01/08/2019 16:07:55</publishTime>
+      <publishTime>01/09/2019 14:29:42</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>03/24/2018 17:44:14</publishTime>
@@ -706,7 +709,7 @@
       <publishTime>11/23/2018 14:17:54</publishTime>
     </File>
     <File Include="page/cart/indexMvc.js">
-      <publishTime>01/08/2019 16:56:09</publishTime>
+      <publishTime>01/09/2019 14:09:54</publishTime>
     </File>
     <File Include="page/common/footer/index.css">
       <publishTime>11/22/2018 14:24:15</publishTime>
@@ -844,7 +847,7 @@
       <publishTime>11/22/2018 14:07:38</publishTime>
     </File>
     <File Include="service/cart-service.js">
-      <publishTime>01/08/2019 16:57:27</publishTime>
+      <publishTime>01/09/2019 14:14:00</publishTime>
     </File>
     <File Include="service/product-service.js">
       <publishTime>11/22/2018 15:35:33</publishTime>
@@ -874,7 +877,7 @@
       <publishTime>11/22/2018 15:23:37</publishTime>
     </File>
     <File Include="Views/Cart/List.cshtml">
-      <publishTime>01/08/2019 16:29:05</publishTime>
+      <publishTime>01/09/2019 14:21:06</publishTime>
     </File>
     <File Include="Views/CommonPage/footer.cshtml">
       <publishTime>01/08/2019 14:41:14</publishTime>
@@ -895,7 +898,7 @@
       <publishTime>11/22/2018 15:14:34</publishTime>
     </File>
     <File Include="Views/Goods/Detail.cshtml">
-      <publishTime>01/08/2019 16:06:39</publishTime>
+      <publishTime>01/09/2019 10:43:23</publishTime>
     </File>
     <File Include="Views/Goods/List.cshtml">
       <publishTime>01/08/2019 16:23:28</publishTime>

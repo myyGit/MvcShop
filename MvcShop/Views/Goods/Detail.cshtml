@@ -23,21 +23,32 @@
     }
     else
     {
+        var imgList = ViewData["ImgList"] == null ? new List<GoodImage>() : (List<GoodImage>)ViewData["ImgList"];
         <div class="intro-wrap">
             <div class="p-img-con">
                 <div class="main-img-con">
-                    <img class="main-img" src="/image/goods/da01.jpg" alt="冰箱" />
+                    @{ 
+                        var img = imgList.FirstOrDefault();
+                        string imgUrl = img == null ? "/image/default/noimg.png" : img.GoodImageUrl;
+                    }
+                    <img class="main-img" src="@imgUrl" alt="冰箱" />
                 </div>
                 <ul class="p-img-list">
-                    <li class="p-img-item">
-                        <img class="p-img" src="/image/goods/da01.jpg" alt="冰箱1" />
-                    </li>
-                    <li class="p-img-item">
-                        <img class="p-img" src="/image/goods/da02.jpg" alt="冰箱2" />
-                    </li>
-                    <li class="p-img-item">
-                        <img class="p-img" src="/image/goods/da03.jpg" alt="冰箱3" />
-                    </li>
+                    @if (imgList == null || imgList.Count <= 0)
+                    {
+                        <li class="p-img-item">
+                            <img class="p-img" src="@imgUrl" alt="冰箱1" />
+                        </li>
+                    }
+                    else
+                    {
+                        foreach (var item in imgList)
+                        {
+                            <li class="p-img-item">
+                                <img class="p-img" src="@item.GoodImageUrl" alt="@item.GoodImageName" />
+                            </li>
+                        }
+                    }
                 </ul>
             </div>
             <div class="p-info-con">

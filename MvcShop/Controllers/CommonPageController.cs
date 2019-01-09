@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcShop.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,11 @@ namespace MvcShop.Controllers
 {
     public class CommonPageController : Controller
     {
+        private readonly ICartService _cartService;
+        public CommonPageController(ICartService cartService)
+        {
+            _cartService = cartService;
+        }
         // GET: CommonPage
         public ActionResult Index()
         {
@@ -21,7 +27,7 @@ namespace MvcShop.Controllers
                 CurrentUser currentUser = (CurrentUser)context.Session["CurrentUser"];
                 ViewBag.IsLogin = true;
                 ViewBag.UserName = currentUser.UserName;
-                ViewBag.CartNum = 2;
+                ViewBag.CartNum = _cartService.GetCartCount(currentUser.UserId);
             }
             else
             {

@@ -11,7 +11,7 @@
     <div class="crumb">
         <div class="w">
             <div class="crumb-con">
-                <a class="link" href="./index.html">MMall</a>
+                <a class="link" href="/">MMall</a>
                 <span>></span>
                 <span class="link-text">购物车</span>
             </div>
@@ -47,11 +47,15 @@
             </div>
             <div class="cart-list">
                 @{ 
-                    var total = 0m;
+                    var total = 0m; //购物车商品总价
+                    var imgList = ViewData["ImgList"] == null ? new List<GoodImage>() : (List<GoodImage>)ViewData["ImgList"];
+                   
                 }
                 @foreach (var item in Model)
                 {
-                    <table class="cart-table" data-product-id="1">
+                    var img = imgList.Where(p=>p.GoodId == item.GoodId).FirstOrDefault();
+                    string imgUrl = img == null ? "/image/default/noimg.png" : img.GoodImageUrl;
+                    <table class="cart-table" data-product-id="@item.GoodId">
                         <tr>
                             <td class="cart-cell cell-check">
                                 <label class="cart-label">
@@ -59,12 +63,12 @@
                                 </label>
                             </td>
                             <td class="cart-cell cell-img">
-                                <a class="link" href="./detail.html?productId=@item.GoodId">
-                                    <img class="p-img" src="/image/goods/da01.jpg" alt="@item.Good.GoodName" />
+                                <a class="link" href="@Url.Action("Detail","Goods",new { productId = item.GoodId})">
+                                    <img class="p-img" src="@imgUrl" alt="@item.Good.GoodName" />
                                 </a>
                             </td>
                             <td class="cart-cell cell-info">
-                                <a class="link" href="./detail.html?productId=1">@item.Good.GoodName</a>
+                                <a class="link" href="@Url.Action("Detail","Goods",new { productId = item.GoodId})">@item.Good.GoodName</a>
                             </td>
                             <td class="cart-cell cell-price">￥@item.GoodPrice</td>
                             <td class="cart-cell cell-count">

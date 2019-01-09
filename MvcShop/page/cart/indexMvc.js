@@ -60,6 +60,16 @@ var page = {
             $pCount.parent().siblings(".cell-total").html(price * newCount);
             $pCount.val(newCount);
             _this.JudgeCount();
+            // 更新购物车商品数量
+            _cart.updateProduct({
+                productId: productId,
+                count: newCount
+            }, function (res) {
+                //_this.renderCart(res);
+                }, function (errMsg) {
+                    console.log(errMsg)
+                _this.showCartError();
+            });
         });
         // 删除单个商品
         $(document).on('click', '.cart-delete', function(){
@@ -126,8 +136,11 @@ var page = {
     deleteCartProduct : function(productIds){
         var _this = this;
         _cart.deleteProduct(productIds, function(res){
-            _this.renderCart(res);
-        }, function(errMsg){
+            //_this.renderCart(res);
+            //location.replace(document.referrer);
+            window.location.href = "/Cart/List";
+        }, function (errMsg) {
+            console.log(errMsg);
             _this.showCartError();
         });
     },

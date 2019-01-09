@@ -73,6 +73,7 @@
     <Compile Include="Mapping\UserRoleMap.cs" />
     <Compile Include="Mapping\UserAccountMap.cs" />
     <Compile Include="Base\MvcShopContext.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserAccount.cs" />
     <Compile Include="UserRoles.cs" />

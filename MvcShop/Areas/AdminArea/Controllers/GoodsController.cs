@@ -45,5 +45,29 @@ namespace MvcShop.Areas.AdminArea.Controllers
             ViewData["CategoryList"] = list;
             return View();
         }
+        public ActionResult List()
+        {
+            int count = 0;
+            var list = _goodService.GetGoodsByCategoryId(0,out count,50);
+            return View(list);
+        }
+        [HttpPost]
+        public ActionResult UploadImg(int goodId,string img,string imgName, HttpPostedFileBase[] fileToUpload)
+        {
+            IList<HttpPostedFileBase> wholePictureIList = Request.Files.GetMultiple("img");
+
+            foreach (HttpPostedFileBase file in wholePictureIList)
+            {
+               // string path = System.IO.Path.Combine(Server.MapPath("~/App_Data"), System.IO.Path.GetFileName(file.FileName));
+                GoodImage goodImage = new GoodImage();
+                goodImage.GoodId = goodId;
+                goodImage.GoodImageName = imgName;
+                goodImage.GoodImageUrl = "/image/goods/" + file.FileName;
+                goodImage.Weight = 0;
+                _goodService.InsertGoodImage(goodImage);
+            }
+            
+            return RedirectToAction("List");
+        }
     }
 }

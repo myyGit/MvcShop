@@ -63,16 +63,21 @@ namespace MvcShop.Service
 
         public List<GoodImage> GetGoodImagesByGoodIds(List<int> goodIds)
         {
-            var imgList = _goodImageReposity.Table.Where(p => goodIds.Contains(p.GoodId))
-                              . GroupBy(p=>p.GoodId,
-                                    (key,list)=> list.OrderByDescending(p=>p.Weight).ThenBy(p=>p.CreateTime).Take(1))
+            var ilist = _goodImageReposity.Table.Where(p => goodIds.Contains(p.GoodId))
+                        .GroupBy(p => p.GoodId,
+                                    (key, list) => list.OrderByDescending(p => p.Weight).ThenBy(p => p.CreateTime).Take(1))
                               .ToList();
             List<GoodImage> goodImages = new List<GoodImage>();
-            foreach (var item in imgList)
+            foreach (var item in ilist)
             {
                 goodImages.Add(item.FirstOrDefault());
             }
             return goodImages;
+        }
+        public List<GoodImage> GetGoodAllImagesByGoodIds(List<int> goodIds)
+        {
+            var ilist = _goodImageReposity.Table.Where(p => goodIds.Contains(p.GoodId) && p.IsActive).OrderByDescending(p=>p.Weight).ThenBy(p=>p.CreateTime);
+            return ilist.ToList();
         }
 
         public int InsertGood(Good good)

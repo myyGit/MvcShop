@@ -1,0 +1,36 @@
+.order,.order table{width:735px;height: auto;margin:0 auto;font-size: 14px;border-collapse:collapse;color:#9D9D9D;text-align: center;}
+.order table tr th {height: 40px;font-size: 16px;color:black;font-weight: normal;background-color: #fafafa;border-top: 1px solid #D1D1D1;border-bottom: 1px solid #D1D1D1;}
+
+.order table .nr td{height: 160px;color: black;}
+.order table .emptyTr{height: 20px;}
+.order table .orderNum{height: 40px;text-align: left;border:1px solid #D1D1D1;border-bottom: none; padding-left: 10px;background-color: #f4f4f4;}
+.order table .goods{width: 362px;}
+.order table .price{width:126px;}
+.order table .num{width: 130px;}
+.order table .pay{width: 124px;}
+.order table .status{width: 124px;}
+.order table .operate{width: 120px;}
+.order .nr td{border: 1px solid #D1D1D1;}
+.order .goodsName .tdImg{width:90px;}
+.order .tdGoodsPrice del{color: #9D9D9D;font-size: 12px;height: 20px;display: block;}
+.order .tdGoodsName .name,.order .tdGoodsName .intro,.order .tdGoodsName .typ{width:250px;padding-left:6px;text-align: center;color: #9D9D9D;}
+.order .tdGoodsName .name a{color:black;font-size:16px;text-decoration: none;text-align: left;}
+.order .tdGoodsName .intro{font-size: 12px;margin-top: 6px;}
+.order .tdGoodsName .typ{font-size: 14px;margin-top: 14px;}
+.order .tdStatus label{color: black;height:30px;display: block;}
+.order .tdStatus a{color:#758ba0;display: block;height: 30px;}
+.order .tdOperate .caozuo input{width: 91px;height: 31px;color: white;border: none;}
+.order .tdOperate .caozuo .payBtn{background-color:#ad1616;border-radius:8px;cursor:pointer;}
+.order .tdOperate .caozuo .pjBtn{background: url(../images/pj.png) no-repeat;color:#f88010;}
+.order .tdOperate .caozuo a{display: block;height: 40px;line-height: 40px;color: #758BA0;}
+
+
+.help_content{width:210px; height:anto;}
+.help_left{width:198px;float:left;}
+.shopping_guide{width:198px; height:60px;border-bottom:1px solid #e2e2e2;background:url(../images/details_img23.png) no-repeat;text-align:center;line-height:60px;color:#2a2a2a;font-size:18px;}
+.help_nav{width:198px; height:anto;border:1px solid #e2e2e2;margin:0;}
+.guide_subnav{width:198px; height:anto;list-style:none;}
+.guide_question{width:100px; height:36px;padding-left:34px;line-height:30px; font-size:16px;color:#6e6e6e;}
+.guide_question a{text-decoration:none;color:#6e6e6e;}
+.guide_question a:hover{color:#2e9665;}
+.logistics_nav{width:198px; height:anto;border:1px solid #e2e2e2;margin-top:10px; margin-left:0;}

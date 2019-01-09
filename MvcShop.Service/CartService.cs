@@ -15,9 +15,11 @@ namespace MvcShop.Service
         {
             _cartReposity = cartReposity;
         }
-        public void DeleteCart(List<int> cartIds)
+        public void DeleteCartByGoodIds(List<int> goodIds)
         {
-            _cartReposity.Table.Where(p=>cartIds.Contains(p.CartId)).Delete();
+            _cartReposity.Table.Where(p=> goodIds.Contains(p.GoodId)).Update(p=> new Cart() {
+                IsActive = false
+            });
         }
 
         public List<Cart> GetCartByUserId(out int count, int? userId, int pageSize = 10, int pageIndex = 1)
@@ -44,6 +46,19 @@ namespace MvcShop.Service
         {
             cart.LastChangeTime = DateTime.Now;
             _cartReposity.Update(cart);
+        }
+        public Cart GetCartByGoodId(int goodId)
+        {
+            return _cartReposity.Table.Where(p => p.GoodId == goodId).OrderByDescending(p=>p.CreateTime).FirstOrDefault();
+        }
+        public int GetCartCount(int? userId)
+        {
+            var list = _cartReposity.Table.Where(p => p.IsActive);
+            if (userId != null && userId > 0)
+            {
+                list.Where(p => p.UserId == userId);
+            }
+            return list.Count();
         }
     }
 }

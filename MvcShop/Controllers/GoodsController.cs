@@ -37,6 +37,8 @@ namespace MvcShop.Controllers
                 return View();
             }
             Good good = _goodService.GetGoodById(Convert.ToInt32(productId));
+            var imgList = _goodService.GetGoodAllImagesByGoodIds(new List<int>() { good .GoodId });
+            ViewData["ImgList"] = imgList;
             return View(good);
         }
     }
