@@ -55,7 +55,7 @@
                 {
                     var img = imgList.Where(p=>p.GoodId == item.GoodId).FirstOrDefault();
                     string imgUrl = img == null ? "/image/default/noimg.png" : img.GoodImageUrl;
-                    <table class="cart-table" data-product-id="@item.GoodId">
+                    <table class="cart-table" data-product-id="@item.GoodId" data-cart-id="@item.CartId">
                         <tr>
                             <td class="cart-cell cell-check">
                                 <label class="cart-label">

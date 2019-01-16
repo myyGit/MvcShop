@@ -16,3 +16,5 @@ F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.SqlServer.dll
 F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.Extended.xml
 F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.Extended.dll.config
 F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\EntityFramework.SqlServer.xml
+F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\MvcShop.Data.dll
+F:\个人网站\MvcShop\MvcShop.Service\bin\Debug\MvcShop.Data.pdb

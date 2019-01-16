@@ -1,0 +1,235 @@
+﻿
+@{
+    ViewBag.Title = "AddOrder";
+    Layout = "~/Views/Shared/_LayoutOne.cshtml";
+}
+@model List<Cart>
+@using MvcShop.Entity;
+<link href="~/page/order/order.css" rel="stylesheet" />
+<link href="~/page/cart/index.css" rel="stylesheet" />
+<script src="~/page/order/index.js"></script>
+<div class="crumb">
+    <div class="w">
+        <div class="crumb-con">
+            <a class="link" href="/">MMall</a>
+            <span>></span>
+            <span class="link-text">我的订单</span>
+        </div>
+    </div>
+</div>
+<div class="paycont">
+    @{
+        var addressList = ViewData["AddressList"] == null ? new List<Address>() : (List<Address>)ViewData["AddressList"];
+        var imgList = ViewData["ImgList"] == null ? new List<GoodImage>() : (List<GoodImage>)ViewData["ImgList"];
+        var total = 0m; //购物车商品总价
+    }
+    <div class="address">
+        <h3>确认收货地址 </h3>
+        <div class="control">
+            <div class="createAddr am-btn am-btn-danger user-addresslist">使用新地址</div>
+        </div>
+        <div class="clear"></div>
+        <ul>
+            @foreach (var item in addressList)
+            {
+                <div class="per-border"></div>
+                <li class="user-addresslist defaultAddr">
+
+                    <div class="address-left">
+                        <div class="user DefaultAddr">
+
+                            <span class="buy-address-detail">
+                                <span class="buy-user">@item.ReceiverName </span>
+                                <span class="buy-phone">@item.MobilePhone</span>
+                            </span>
+                        </div>
+                        <div class="default-address DefaultAddr">
+                            <span class="buy-line-title buy-line-title-type">收货地址：</span>
+                            <span class="buy--address-detail">
+                                <span class="province">@item.Province</span>省
+                                <span class="city">@item.City</span>市
+                                <span class="dist">@item.Area</span>区
+                                <span class="street">@item.Street</span>
+                            </span>
+                        </div>
+                        <ins class="deftip">默认地址</ins>
+                    </div>
+                    <div class="address-right">
+                        <a href="../person/address.html">
+                            <span class="am-icon-angle-right am-icon-lg"></span>
+                        </a>
+                    </div>
+                    <div class="clear"></div>
+
+                    <div class="new-addr-btn">
+                        <a href="javascript:void(0)" class="hidden setDefault">设为默认</a>
+                        <span class="new-addr-bar hidden setDefaultLine">|</span>
+                        <a href="javascript:void(0);">编辑</a>
+                        <span class="new-addr-bar">|</span>
+                        <a href="javascript:void(0);" onclick="delClick(this);">删除</a>
+                    </div>
+
+                </li>
+            }
+        </ul>
+
+        <div class="clear"></div>
+    </div>
+
+
+    <!--订单 -->
+    <div class="page-wrap w" style="margin-top: 20px;">
+        <div class="cart-header">
+            <table class="cart-table" style="    background-color: white;">
+                <tr>
+                    <th class="cart-cell cell-check">
+                        <label class="cart-label">
+
+                        </label>
+                    </th>
+                    <th class="cart-cell cell-info">商品信息</th>
+                    <th class="cart-cell cell-price">单价</th>
+                    <th class="cart-cell cell-count">数量</th>
+                    <th class="cart-cell cell-total">合计</th>
+                </tr>
+            </table>
+        </div>
+        @foreach (var item in Model)
+        {
+            var img = imgList.Where(p => p.GoodId == item.GoodId).FirstOrDefault();
+            string imgUrl = img == null ? "/image/default/noimg.png" : img.GoodImageUrl;
+            <div class="cart-list">
+                <table class="cart-table" data-product-id="1" style="    background-color: white;">
+                    <tr>
+                        <td class="cart-cell cell-check">
+                            <label class="cart-label">
+                            </label>
+                        </td>
+                        <td class="cart-cell cell-img">
+                            <a class="link" href="@Url.Action("Detail","Goods",new { productId = item.GoodId})">
+                                <img class="p-img" src="@imgUrl" alt="@item.Good.GoodName" />
+                            </a>
+                        </td>
+                        <td class="cart-cell cell-info" style="vertical-align: text-top;padding-top: 10px;">
+                            <a class="link" href="@Url.Action("Detail","Goods",new { productId = item.GoodId})" style="width: 420px;word-break: break-word;">
+                                @item.Good.GoodName
+                            </a>
+                        </td>
+                        <td class="cart-cell cell-price">￥@item.Good.GoodPrice</td>
+                        <td class="cart-cell cell-count">
+                            x @item.Num
+                        </td>
+                        <td class="cart-cell cell-total">￥@(item.Good.GoodPrice * item.Num)</td>
+                    </tr>
+                </table>
+            </div>
+            total += (item.Num * item.GoodPrice);
+        }
+    </div>
+
+    <div class="clear"></div>
+    <div class="pay-total">
+        <!--留言-->
+        <div class="order-extra">
+            <div class="order-user-info">
+                <div id="holyshit257" class="memo">
+                    <label>买家留言：</label>
+                    <textarea class="memo-close" placeholder="选填,对本次交易的说明（建议填写已经和卖家达成一致的说明）"></textarea>
+                    <div class="msg hidden J-msg" style="    display: -webkit-inline-box;">
+                        <p class="error">最多输入500个字符</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+    <!--含运费小计 -->
+    <div class="buy-point-discharge ">
+        <div tabindex="0" id="holyshit267" class="realPay">
+            <em class="t">合计：</em>
+            <span class="price g_price ">
+                <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">@total</em>
+            </span>
+        </div>
+        <div tabindex="0" id="holyshit267" class="realPay">
+            <em class="t">实付款：</em>
+            <span class="price g_price ">
+                <span>¥</span> <em class="style-large-bold-red " id="J_ActualFee">@total</em>
+            </span>
+        </div>
+        <div id="holyshit269" class="submitOrder">
+            <span>
+                提交订单
+            </span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <!--弹层 添加地址-->
+    <div class="theme-popover-mask"></div>
+    <div class="theme-popover">
+
+        <!--标题 -->
+        <div class="am-cf am-padding">
+            <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">新增地址</strong> / <small>Add address</small></div>
+        </div>
+        <hr />
+
+        <div class="am-u-md-12">
+            <form class="am-form am-form-horizontal" style="width:90%">
+
+                <div class="am-form-group">
+                    <label for="user-name" class="am-form-label">收货人</label>
+                    <div class="am-form-content">
+                        <input type="text" id="user-name" placeholder="收货人">
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="am-form-group">
+                    <label for="user-phone" class="am-form-label">手机号码</label>
+                    <div class="am-form-content">
+                        <input id="user-phone" placeholder="手机号必填" type="email">
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="am-form-group">
+                    <label for="user-phone" class="am-form-label">所在地</label>
+                    <div class="am-form-content address">
+                        <select data-am-selected>
+                            <option value="a">浙江省</option>
+                            <option value="b">湖北省</option>
+                        </select>
+                        <select data-am-selected>
+                            <option value="a">温州市</option>
+                            <option value="b">武汉市</option>
+                        </select>
+                        <select data-am-selected>
+                            <option value="a">瑞安区</option>
+                            <option value="b">洪山区</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="am-form-group">
+                    <label for="user-intro" class="am-form-label">详细地址</label>
+                    <div class="am-form-content">
+                        <textarea class="" rows="3" id="user-intro" placeholder="输入详细地址"></textarea>
+                        <small>100字以内写出你的详细地址...</small>
+                    </div>
+                </div>
+
+                <div class="am-form-group theme-poptit">
+                    <div class="am-u-sm-9 am-u-sm-push-3">
+                        <div class="am-btn am-btn-danger">保存</div>
+                        <div class="am-btn am-btn-danger close">取消</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="clear"></div>
+</div>
+

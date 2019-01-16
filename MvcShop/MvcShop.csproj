@@ -245,6 +245,9 @@
     <Content Include="image\goods\zhong05.jpg" />
     <Content Include="image\goods\zhong06.jpg" />
     <Content Include="image\icon\loading.gif" />
+    <Content Include="image\peraddbg.png" />
+    <Content Include="image\peraddress.png" />
+    <Content Include="image\peraddressbg.png" />
     <Content Include="js\jquery.min.js" />
     <Content Include="page\cart\indexMvc.js" />
     <Content Include="page\cart\index.css" />
@@ -268,7 +271,7 @@
     <Content Include="page\list\index.css" />
     <Content Include="page\list\index.js" />
     <Content Include="page\module.js" />
-    <Content Include="page\order\base.css" />
+    <Content Include="page\order\index.js" />
     <Content Include="page\order\order.css" />
     <Content Include="page\result\index.css" />
     <Content Include="page\result\index.js" />
@@ -372,6 +375,7 @@
     <Content Include="Views\UserAccount\UserPassUpdate.cshtml" />
     <Content Include="Views\Shared\_LayoutUserCenter.cshtml" />
     <Content Include="Views\Cart\List.cshtml" />
+    <Content Include="Views\Order\OrderDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

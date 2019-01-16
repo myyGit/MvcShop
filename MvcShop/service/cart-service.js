@@ -88,5 +88,17 @@ var _cart = {
             method:"POST"
         });
     },
+    // 提交订单
+    createOrder: function (cartIds, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/Order/AddOrder'),
+            data: {
+                cartIds: cartIds
+            },
+            success: resolve,
+            error: reject,
+            method: "POST"
+        });
+    },
 }
 //module.exports = _cart;

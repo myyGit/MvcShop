@@ -47,9 +47,13 @@ namespace MvcShop.Service
             cart.LastChangeTime = DateTime.Now;
             _cartReposity.Update(cart);
         }
+        public List<Cart> GetCartByCartIds(List<int> cartIds)
+        {
+            return _cartReposity.Table.Where(p => p.IsActive && cartIds.Contains(p.CartId)).OrderByDescending(p => p.CreateTime).ToList();
+        }
         public Cart GetCartByGoodId(int goodId)
         {
-            return _cartReposity.Table.Where(p => p.GoodId == goodId).OrderByDescending(p=>p.CreateTime).FirstOrDefault();
+            return _cartReposity.Table.Where(p => p.GoodId == goodId && p.IsActive).OrderByDescending(p=>p.CreateTime).FirstOrDefault();
         }
         public int GetCartCount(int? userId)
         {

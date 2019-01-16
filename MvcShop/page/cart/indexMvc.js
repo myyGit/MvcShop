@@ -98,10 +98,19 @@ var page = {
             }
         });
         // 提交购物车
-        $(document).on('click', '.btn-submit', function(){
+        $(document).on('click', '.btn-submit', function () {
+            var arrCartIds = [],
+                $selectedItem = $('.cart-select:checked');
+            var iLength = $selectedItem.length;
             // 总价大于0，进行提交
-            if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
-                window.location.href = './confirm.html';
+            if (iLength > 0) {
+                for (var i = 0, iLength = $selectedItem.length; i < iLength; i++) {
+                    arrCartIds
+                        .push($($selectedItem[i]).parents('.cart-table').data('cart-id'));
+                }
+                window.location.href = "/Order/OrderDetail?cartIds=" + arrCartIds.join(',');
+                //_this.createOrder(arrCartIds.join(','));
+                //window.location.href = './confirm.html';
             }else{
                 _mm.errorTips('请选择商品后再提交');
             }
@@ -139,6 +148,19 @@ var page = {
             //_this.renderCart(res);
             //location.replace(document.referrer);
             window.location.href = "/Cart/List";
+        }, function (errMsg) {
+            console.log(errMsg);
+            _this.showCartError();
+        });
+    },
+    //提交订单
+    createOrder: function (cartIds) {
+        var _this = this;
+        //购物车ID
+        _cart.createOrder(cartIds, function (res) {
+            //_this.renderCart(res);
+            //location.replace(document.referrer);
+            window.location.href = "/Order/AddOrder?id=1";
         }, function (errMsg) {
             console.log(errMsg);
             _this.showCartError();

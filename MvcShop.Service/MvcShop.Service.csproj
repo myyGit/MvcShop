@@ -61,11 +61,17 @@
     <Compile Include="ICartService.cs" />
     <Compile Include="ICategoryService.cs" />
     <Compile Include="IGoodService.cs" />
+    <Compile Include="IOrderService.cs" />
     <Compile Include="IUserService.cs" />
+    <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MvcShop.Data\MvcShop.Data.csproj">
+      <Project>{542d1fc6-19d2-4a76-a1b9-063c6a55d7ab}</Project>
+      <Name>MvcShop.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MvcShop.Entity\MvcShop.Entity.csproj">
       <Project>{f74f7aec-4d4b-49d8-a15b-98b09a3bb2d2}</Project>
       <Name>MvcShop.Entity</Name>

@@ -35,6 +35,7 @@ namespace MvcShop
             builder.RegisterType<GoodService>().As<IGoodService>().InstancePerHttpRequest();
             builder.RegisterType<CategoryService>().As<ICategoryService>().InstancePerHttpRequest();
             builder.RegisterType<CartService>().As<ICartService>().InstancePerHttpRequest();
+            builder.RegisterType<OrderService>().As<IOrderService>().InstancePerHttpRequest(); 
 #pragma warning restore CS0618 // 类型或成员已过时
             #region 链接
             builder.Register<IDbContext>(p => new MvcShopContext(ConfigurationManager.AppSettings["CoreConString"].ToString())).Named<IDbContext>("coreConString");
